@@ -68,7 +68,13 @@ strong { font-weight: 700; }
 
 .race-block { margin-bottom: 28px; }
 .race-head { font-size: 20px; font-weight: 800; color: #fff; background: #274060; padding: 8px 12px; border-radius: 4px; margin-bottom: 8px; }
-</style>
+
+body { overflow-x: auto; }
+@media (max-width: 700px) {
+  body { margin: 8px; padding-top: 48px; }
+  td, th { padding: 6px 6px; font-size: 11px; }
+  .race-head { font-size: 15px; }
+}</style>
 </head>
 <body>
 <div class="zoom-bar" aria-label="Yakınlaştırma">
