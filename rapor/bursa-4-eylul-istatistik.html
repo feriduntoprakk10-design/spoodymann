@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
+  <title>BURSA 04.09.2026 - PROGRAM İSTATİSTİK</title>
+  <style>
+    html, body {
+      touch-action: pan-x pan-y pinch-zoom;
+    }
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: #1f2328;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.55;
+      font-size: 16px;
+      overflow-x: auto;
+      --report-zoom: 1;
+    }
+    .page {
+      zoom: var(--report-zoom);
+      width: 100%;
+      max-width: 100vw;
+      box-sizing: border-box;
+    }
+    @supports not (zoom: 1) {
+      .page {
+        transform: scale(var(--report-zoom));
+        transform-origin: top left;
+        width: calc(100% / var(--report-zoom));
+        max-width: none;
+      }
+    }
+    .zoom-bar {
+      position: fixed;
+      top: 8px;
+      right: 8px;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: #ffffff;
+      border: 1px solid #c9c9c9;
+      border-radius: 8px;
+      padding: 4px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .18);
+    }
+    .zoom-bar button {
+      width: 38px;
+      height: 34px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #111111;
+      border: 1px solid #c9c9c9;
+      background: #f6f6f6;
+      border-radius: 6px;
+      cursor: pointer;
+      touch-action: manipulation;
+    }
+    .zoom-bar button:active { background: #e0e0e0; }
+    .zoom-label {
+      min-width: 46px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: #111111;
+    }
+    main {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 70px 18px 64px;
+    }
+    h1 { font-size: 26px; font-weight: 700; color: #111111; margin: 0 0 10px; }
+    h2 { font-size: 22px; font-weight: 700; color: #111111; margin: 34px 0 12px; }
+    h3 { font-size: 16px; font-weight: 700; color: #111111; margin: 22px 0 8px; }
+    p { margin: 6px 0; }
+    .section {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #111111;
+      margin: 26px 0 8px;
+      text-transform: uppercase;
+    }
+    .note-title { font-size: 13px; font-weight: 700; color: #444444; margin: 30px 0 6px; }
+    .table-wrap { margin: 8px 0 24px; }
+    table { width: 100%; border-collapse: collapse; min-width: 560px; }
+    th {
+      text-align: left;
+      font-weight: 700;
+      color: #000000;
+      border-bottom: 2px solid #c9c9c9;
+      padding: 9px 12px;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+    td {
+      border-bottom: 1px solid #ececec;
+      padding: 10px 12px;
+      font-size: 14px;
+      vertical-align: top;
+    }
+    strong { font-weight: 700; color: #000000; }
+    .sep { color: #9aa0a6; font-weight: 400; margin: 0 2px; }
+    .horse-block { margin: 12px 0 22px; }
+    .horse { font-weight: 700; color: #111111; font-size: 15px; margin-bottom: 4px; }
+    .horse-block p { margin: 2px 0; font-size: 14px; }
+    @media (max-width: 640px) {
+      body { font-size: 15px; }
+      h2 { font-size: 19px; }
+      td, th { padding: 8px 8px; font-size: 13px; }
+    }
+  </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N0CWBQ8K4X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-N0CWBQ8K4X');
+</script>
+</head>
+<body>
+  <div class="zoom-bar">
+    <button type="button" onclick="setZoom(-0.15)" aria-label="Küçült">−</button>
+    <span class="zoom-label" id="zoomLabel">100%</span>
+    <button type="button" onclick="setZoom(0.15)" aria-label="Büyüt">+</button>
+    <button type="button" onclick="resetZoom()" aria-label="Sığdır">0</button>
+  </div>
+  <div class="page">
+  <main>
+<h1>BURSA 04.09.2026 - PROGRAM İSTATİSTİK</h1>
+<p>Not: Nadir J/A eşleşmesi ve genel J/A kombo istatistikleri tüm DB geneline göre hesaplandı; hipodrom bazlı değildir.</p>
+<div class="section">BİR ÖNCEKİ YARIŞ GÜNÜ PİST EĞİLİMİ</div>
+<p>Referans yarış günü: <strong>2026-08-31</strong></p>
+<div class="table-wrap"><table><thead><tr><th>Pist</th><th>Koşu</th><th>Kazanan Ön Grup</th><th>İlk 3 Derecesinde Ön Grup</th><th>Akış Eğilimi</th><th>Hat Eğilimi</th></tr></thead><tbody><tr><td>ÇİM</td><td><strong>8</strong></td><td><strong>2/8 = %25.0</strong></td><td><strong>7/24 = %29.2</strong></td><td>Geriden gelenler avantajlı</td><td>İç/dış hat dengeli</td></tr><tr><td>KUM</td><td><strong>2</strong></td><td><strong>0/2 = %0.0</strong></td><td><strong>2/6 = %33.3</strong></td><td>Geriden gelenler avantajlı</td><td>İç/dış hat dengeli</td></tr></tbody></table></div>
+<p>Son üç toplantı: <strong>2026-08-31 / 2026-08-28 / 2026-08-24</strong></p>
+<div class="table-wrap"><table><thead><tr><th>Pist</th><th>Koşu</th><th>Kazanan Ön Grup</th><th>İlk 3 Derecesinde Ön Grup</th><th>Destek Eğilimi</th><th>Hat Eğilimi</th></tr></thead><tbody><tr><td>ÇİM</td><td><strong>19</strong></td><td><strong>5/19 = %26.3</strong></td><td><strong>17/57 = %29.8</strong></td><td>Geriden gelenler avantajlı</td><td>İç/dış hat dengeli</td></tr><tr><td>KUM</td><td><strong>9</strong></td><td><strong>5/9 = %55.6</strong></td><td><strong>14/27 = %51.9</strong></td><td>Dengeli</td><td>İç/dış hat dengeli</td></tr></tbody></table></div>
+<h2>1. Koşu - 1200 m - ÇİM - SATIŞ 1</h2>
+<div class="section">DİKKAT ÇEKİCİ GALOPLAR</div>
+<div class="table-wrap"><table><thead><tr><th>At</th><th>Galop</th><th>Sıralama</th><th>Tarih / Pist</th></tr></thead><tbody><tr><td>9-TANNUR STAR</td><td>600: 0.36.20 / 400: 0.23.90</td><td>600 m: <strong>2/63</strong> - 400 m: <strong>8/170</strong></td><td>29.08.2026 Kum Bursa</td></tr></tbody></table></div>
+<div class="section">GENEL J/A KOMBO İLK 5</div>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>At</th><th>Jokey / Antrenör</th><th>J/A Kombo</th></tr></thead><tbody><tr><td>1</td><td>4-BEBEĞİM OLDUN</td><td>C.ALTUN / A.MANTAŞ</td><td><strong>28/3 = %10.7</strong></td></tr><tr><td>2</td><td>9-TANNUR STAR</td><td>S.TIRPAN / F.KIRAN</td><td><strong>26/1 = %3.8</strong></td></tr><tr><td>3</td><td>7-ÇAPGUR</td><td>MAH.TURAN / İ.TURAN</td><td><strong>33/1 = %3.0</strong></td></tr></tbody></table></div>
+<h2>2. Koşu - 1800 m - ÇİM - Handikap 15 /H2</h2>
+<div class="section">DİKKAT ÇEKİCİ GALOPLAR</div>
+<div class="table-wrap"><table><thead><tr><th>At</th><th>Galop</th><th>Sıralama</th><th>Tarih / Pist</th></tr></thead><tbody><tr><td>7-MODİGLİANİ</td><td>600: 0.35.70 / 400: 0.23.00</td><td>600 m: <strong>1/122</strong> - 400 m: <strong>1/254</strong></td><td>2.09.2026 Kum İzmir</td></tr><tr><td>12-SWISS DANCER</td><td>800: 0.50.20 / 400: 0.24.40</td><td>800 m: <strong>2/19</strong></td><td>2.09.2026 Kum Kocaeli</td></tr><tr><td>6-ECHOGUETTE</td><td>600: 0.38.70 / 400: 0.24.20</td><td>400 m: <strong>14/170</strong></td><td>2.09.2026 Kum - İç Bursa</td></tr></tbody></table></div>
+<div class="section">NADİR J/A EŞLEŞMESİ</div>
+<div class="table-wrap"><table><thead><tr><th>At</th><th>Jokey / Antrenör</th><th>J/A Geçmişi</th><th>Jokey Genel</th></tr></thead><tbody><tr><td>7-MODİGLİANİ</td><td>M.ÇİÇEK / MUR.AKSOY</td><td><strong>0/0 = veri yok</strong></td><td><strong>3269/535 = %16.4</strong></td></tr></tbody></table></div>
+<div class="section">GENEL J/A KOMBO İLK 5</div>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>At</th><th>Jokey / Antrenör</th><th>J/A Kombo</th></tr></thead><tbody><tr><td>1</td><td>8-MİSAKA</td><td>E.KADİRLER AP / N.YILDIRIM</td><td><strong>1/1 = %100.0</strong></td></tr><tr><td>2</td><td>9-GOLDEN SNOW</td><td>MAH.TURAN / GAL.KILIÇ</td><td><strong>10/3 = %30.0</strong></td></tr><tr><td>3</td><td>6-ECHOGUETTE</td><td>C.ALTUN / SER.GÖKÇE</td><td><strong>93/16 = %17.2</strong></td></tr><tr><td>4</td><td>3-KAVALA GÜCÜ</td><td>T.ALICI / Ş.AKDUMAN</td><td><strong>6/1 = %16.7</strong></td></tr><tr><td>5</td><td>5-DRAGON BORA</td><td>B.M.MIRIK / M.GÜDÜCÜ</td><td><strong>20/3 = %15.0</strong></td></tr></tbody></table></div>
+<h2>3. Koşu - 1400 m - ÇİM - Maiden</h2>
+<div class="section">DİKKAT ÇEKİCİ GALOPLAR</div>
+<div class="table-wrap"><table><thead><tr><th>At</th><th>Galop</th><th>Sıralama</th><th>Tarih / Pist</th></tr></thead><tbody><tr><td>4-UNDERGROUND</td><td>1000: 1.02.80 / 400: 0.24.70</td><td>1000 m: <strong>2/36</strong></td><td>30.08.2026 Kum Bursa</td></tr><tr><td>2-BOLT NONSTOP</td><td>800: 0.52.00 / 400: 0.25.60</td><td>800 m: <strong>5/28</strong></td><td>30.08.2026 Kum Bursa</td></tr></tbody></table></div>
+<div class="section">61+ GÜN ARA VEREN AT</div>
+<div class="table-wrap"><table><thead><tr><th>At</th><th>Ara / Son Yarış</th><th>Ant 61+ Dönüş</th><th>2. Yarış</th></tr></thead><tbody><tr><td>4-UNDERGROUND</td><td><strong>77 gün</strong>; 2026-06-19 BURSA S=3</td><td><strong>47/3 = %6.4</strong></td><td><strong>48/7 = %14.6</strong></td></tr><tr><td>7-PRINCESS ALEXANDRA</td><td><strong>62 gün</strong>; 2026-07-04 ANKARA S=8</td><td><strong>70/3 = %4.3</strong></td><td><strong>66/1 = %1.5</strong></td></tr></tbody></table></div>
+<div class="section">GENEL J/A KOMBO İLK 5</div>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>At</th><th>Jokey / Antrenör</th><th>J/A Kombo</th></tr></thead><tbody><tr><td>1</td><td>3-OTTOMAN</td><td>B.M.MIRIK / Ş.ÇELİK</td><td><strong>38/5 = %13.2</strong></td></tr><tr><td>2</td><td>7-PRINCESS ALEXANDRA</td><td>E.KADİRLER AP / K.ŞENGEL</td><td><strong>84/10 = %11.9</strong></td></tr><tr><td>3</td><td>4-UNDERGROUND</td><td>C.ALTUN / A.MANTAŞ</td><td><strong>28/3 = %10.7</strong></td></tr><tr><td>4</td><td>5-ZEALANDIA</td><td>H.TURAN AP / U.GÖKÇE</td><td><strong>29/2 = %6.9</strong></td></tr><tr><td>5</td><td>1-BABA GİRAY</td><td>MAH.TURAN / K.ŞENGEL</td><td><strong>31/2 = %6.5</strong></td></tr></tbody></table></div>
+<h2>4. Koşu - 1300 m - ÇİM - ŞARTLI 5/DHÖW</h2>
+<div class="section">DİKKAT ÇEKİCİ SON 800</div>
+<div class="horse-block"><div class="horse">7-SAMSUNLU BEY</div><p>Son yarış: 2026-04-13 BURSA 4. Koşu - 1000 m - KUM Normal - Şartlı 1</p><p>Son 800: <strong>52,80</strong> <span class="sep">•</span> Sınıf içi: <strong>1/35</strong> (en iyi <strong>52,80</strong>, fark <strong>+0,00 sn</strong>)</p><p>Sınıfsız: <strong>1/64</strong> (en iyi <strong>52,80</strong>, fark <strong>+0,00 sn</strong>, en iyi derecenin sınıfı: Şartlı 1)</p></div>
+<div class="section">61+ GÜN ARA VEREN AT</div>
+<div class="table-wrap"><table><thead><tr><th>At</th><th>Ara / Son Yarış</th><th>Ant 61+ Dönüş</th><th>2. Yarış</th></tr></thead><tbody><tr><td>7-SAMSUNLU BEY</td><td><strong>144 gün</strong>; 2026-04-13 BURSA S=1</td><td><strong>33/1 = %3.0</strong></td><td><strong>31/2 = %6.5</strong></td></tr></tbody></table></div>
+<div class="section">GENEL J/A KOMBO İLK 5</div>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>At</th><th>Jokey / Antrenör</th><th>J/A Kombo</th></tr></thead><tbody><tr><td>1</td><td>8-GOZEYOĞLU</td><td>E.KADİRLER AP / R.KILIÇ</td><td><strong>15/4 = %26.7</strong></td></tr><tr><td>2</td><td>2-ŞÖHRET HANIM</td><td>M.ÇİÇEK / Y.TAŞKIN</td><td><strong>19/5 = %26.3</strong></td></tr></tbody></table></div>
+<h2>5. Koşu - 2000 m - ÇİM - KV-7/DHT</h2>
+<div class="section">DİKKAT ÇEKİCİ GALOPLAR</div>
+<div class="table-wrap"><table><thead><tr><th>At</th><th>Galop</th><th>Sıralama</th><th>Tarih / Pist</th></tr></thead><tbody><tr><td>2-ATILIMBEYİ</td><td>1200: 1.27.00 / 1000: 1.12.00 / 400: 0.28.00</td><td>1200 m: <strong>2/8</strong></td><td>30.08.2026 Kum Bursa</td></tr><tr><td>5-KRALKARINCA</td><td>400: 0.27.30 / 200: 0.13.50</td><td>200 m: <strong>5/11</strong></td><td>3.09.2026 Kum - İç İstanbul</td></tr></tbody></table></div>
+<div class="section">GENEL J/A KOMBO İLK 5</div>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>At</th><th>Jokey / Antrenör</th><th>J/A Kombo</th></tr></thead><tbody><tr><td>1</td><td>2-ATILIMBEYİ</td><td>O.YILDIZ / H.DEMİRBAŞ</td><td><strong>18/3 = %16.7</strong></td></tr><tr><td>2</td><td>8-KURŞUNİLİ</td><td>O.ATMACA / T.N.YILDIZ</td><td><strong>6/1 = %16.7</strong></td></tr><tr><td>3</td><td>5-KRALKARINCA</td><td>G.KOCAKAYA / H.YÜZBAŞI</td><td><strong>17/2 = %11.8</strong></td></tr><tr><td>4</td><td>7-SÖZÜ GEÇER</td><td>C.PASO / S.BAYDAN</td><td><strong>42/3 = %7.1</strong></td></tr><tr><td>5</td><td>1-BOĞAZ ÇOCUĞU</td><td>A.SÖZEN / ADN.POLAT</td><td><strong>15/1 = %6.7</strong></td></tr></tbody></table></div>
+<h2>6. Koşu - 1400 m - ÇİM - Maiden</h2>
+<div class="section">61+ GÜN ARA VEREN AT</div>
+<div class="table-wrap"><table><thead><tr><th>At</th><th>Ara / Son Yarış</th><th>Ant 61+ Dönüş</th><th>2. Yarış</th></tr></thead><tbody><tr><td>5-PRAVDA</td><td><strong>77 gün</strong>; 2026-06-19 BURSA S=3</td><td><strong>70/3 = %4.3</strong></td><td><strong>66/1 = %1.5</strong></td></tr></tbody></table></div>
+<div class="section">İLK DEFA KOŞAN AT - ANTRENÖR VE ANNE KARDEŞ İLK YARIŞI KAZANMA ORANLARI</div>
+<div class="table-wrap"><table><thead><tr><th>At</th><th>Antrenör İlk Koşan</th><th>Anne Kardeş İlk Yarış</th><th>Sonuçlar</th></tr></thead><tbody><tr><td>2-GREATEST BOY</td><td><strong>33/0 = %0.0</strong></td><td><strong>0/0 = veri yok</strong></td><td>-</td></tr></tbody></table></div>
+<div class="section">GENEL J/A KOMBO İLK 5</div>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>At</th><th>Jokey / Antrenör</th><th>J/A Kombo</th></tr></thead><tbody><tr><td>1</td><td>8-NALDÖKEN</td><td>O.GÖKÇE / Z.KAYA</td><td><strong>8/3 = %37.5</strong></td></tr><tr><td>2</td><td>4-OLD GUARD</td><td>O.YILDIZ / A.MANTAŞ</td><td><strong>8/1 = %12.5</strong></td></tr><tr><td>3</td><td>5-PRAVDA</td><td>E.KADİRLER AP / K.ŞENGEL</td><td><strong>84/10 = %11.9</strong></td></tr><tr><td>4</td><td>7-MUSHU</td><td>E.AKKAYA AP / M.ÖZGÜL</td><td><strong>79/5 = %6.3</strong></td></tr><tr><td>5</td><td>2-GREATEST BOY</td><td>Y.T.AKKAYA AP / A.MANTAŞ</td><td><strong>16/1 = %6.2</strong></td></tr></tbody></table></div>
+<h2>7. Koşu - 1200 m - ÇİM - Handikap 14 /H2</h2>
+<div class="section">DİKKAT ÇEKİCİ GALOPLAR</div>
+<div class="table-wrap"><table><thead><tr><th>At</th><th>Galop</th><th>Sıralama</th><th>Tarih / Pist</th></tr></thead><tbody><tr><td>13-BOLD STEPS</td><td>600: 0.39.50 / 400: 0.26.20 / 200: 0.13.20</td><td>200 m: <strong>4/5</strong></td><td>3.09.2026 Sentetik İstanbul</td></tr><tr><td>3-VAELLA</td><td>1000: 1.03.30 / 400: 0.25.40</td><td>1000 m: <strong>5/45</strong></td><td>30.08.2026 Kum Bursa</td></tr></tbody></table></div>
+<div class="section">ARADAN SONRA 3. YARIŞ</div>
+<div class="table-wrap"><table><thead><tr><th>At</th><th>Ara</th><th>Dönüş Yarışı</th><th>2. Yarış</th></tr></thead><tbody><tr><td>9-HILDA</td><td><strong>224 gün</strong></td><td>2026-08-12 ISTANBUL S=8</td><td>2026-08-30 ISTANBUL S=9</td></tr></tbody></table></div>
+<div class="section">NADİR J/A EŞLEŞMESİ</div>
+<div class="table-wrap"><table><thead><tr><th>At</th><th>Jokey / Antrenör</th><th>J/A Geçmişi</th><th>Jokey Genel</th></tr></thead><tbody><tr><td>4-MAMDANI</td><td>M.ÇİÇEK / Y.C. KARATOPRAK</td><td><strong>0/0 = veri yok</strong></td><td><strong>3269/535 = %16.4</strong></td></tr></tbody></table></div>
+<div class="section">GENEL J/A KOMBO İLK 5</div>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>At</th><th>Jokey / Antrenör</th><th>J/A Kombo</th></tr></thead><tbody><tr><td>1</td><td>1-GECENİN GÜCÜ</td><td>N.ŞEN / SEN.ŞEN</td><td><strong>2/1 = %50.0</strong></td></tr><tr><td>2</td><td>10-MY LIFE FIRE</td><td>O.YILDIZ / K.ŞENGEL</td><td><strong>70/14 = %20.0</strong></td></tr><tr><td>3</td><td>15-SENSHI AMAZON</td><td>T.ALICI / A.TEMİZER</td><td><strong>6/1 = %16.7</strong></td></tr><tr><td>4</td><td>11-TIZ TEMPEST</td><td>O.EREN / MEH.DEMİR</td><td><strong>27/3 = %11.1</strong></td></tr><tr><td>5</td><td>12-BALABAN SÜMBÜLÜ</td><td>Y.E.YÜKSEL AP / M.ÖZGÜL</td><td><strong>217/14 = %6.5</strong></td></tr></tbody></table></div>
+<div class="note-title">KONTROL ÖZETİ</div>
+<p>Kullanılan DB: C:\Users\Monster\Documents\Codex\2026-05-25\tjk-org-sitesinden-son-1-y\tjk_beyer_project\tjk_beyer_v2.db</p><p>DB tarih aralığı: 2023-06-01 - 2026-09-03</p><p>Program CSV: C:\Users\Monster\Documents\Codex\2026-05-25\tjk-org-sitesinden-son-1-y\tjk_beyer_project\work\programs_20260904\2026-09-04_bursa_program_raw.csv</p><p>Analiz edilen at: 71</p><p>61+ ara at: 4</p><p>Aradan sonra 3. yarış sinyali: 1</p><p>İlk defa koşan: 1</p><p>Nadir J/A eşleşmesi: 2</p><p>Eksik veri uyarısı: DB son sonuç tarihi 2026-09-03; sonraki sonuçlar henüz DB&#x27;de yok.</p><p>DB&#x27;ye yazılmadı.</p>
+  </main>
+  </div>
+  <script>
+    (function () {
+      var MIN = 0.25, MAX = 3;
+      var page = document.querySelector('.page');
+      var label = document.getElementById('zoomLabel');
+      function load() {
+        try { return Number(localStorage.getItem('istatistikReportZoom') || '1'); }
+        catch (e) { return 1; }
+      }
+      function save(v) {
+        try { localStorage.setItem('istatistikReportZoom', v.toFixed(2)); }
+        catch (e) {}
+      }
+      function naturalWidth() {
+        page.style.setProperty('--report-zoom', '1');
+        var w = document.documentElement.scrollWidth;
+        return w;
+      }
+      var reportZoom = 1;
+      function applyZoom() {
+        reportZoom = Math.max(MIN, Math.min(MAX, reportZoom));
+        page.style.setProperty('--report-zoom', reportZoom.toFixed(2));
+        label.textContent = Math.round(reportZoom * 100) + '%';
+        save(reportZoom);
+      }
+      function fitToViewport() {
+        var w = naturalWidth();
+        var vw = window.innerWidth;
+        reportZoom = (vw / w) < 1 ? (vw / w) : 1;
+        reportZoom = Math.max(MIN, Math.min(MAX, reportZoom));
+        applyZoom();
+      }
+      window.setZoom = function (d) { reportZoom = Math.max(MIN, Math.min(MAX, (Number.isFinite(reportZoom) ? reportZoom : 1) + d)); applyZoom(); };
+      window.resetZoom = function () { fitToViewport(); };
+      var stored = load();
+      if (stored > 1.001) {
+        reportZoom = stored;
+        applyZoom();
+      } else {
+        fitToViewport();
+      }
+      window.addEventListener('resize', function () {
+        if (reportZoom <= 1.001) { fitToViewport(); }
+      });
+    })();
+  </script>
+</body>
+</html>
