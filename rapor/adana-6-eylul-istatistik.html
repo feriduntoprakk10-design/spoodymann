@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
+  <title>ADANA 06.09.2026 - PROGRAM İSTATİSTİK</title>
+  <style>
+    html, body {
+      touch-action: pan-x pan-y pinch-zoom;
+    }
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: #1f2328;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.55;
+      font-size: 16px;
+      overflow-x: auto;
+      --report-zoom: 1;
+    }
+    .page {
+      zoom: var(--report-zoom);
+      width: 100%;
+      max-width: 100vw;
+      box-sizing: border-box;
+    }
+    @supports not (zoom: 1) {
+      .page {
+        transform: scale(var(--report-zoom));
+        transform-origin: top left;
+        width: calc(100% / var(--report-zoom));
+        max-width: none;
+      }
+    }
+    .zoom-bar {
+      position: fixed;
+      top: 8px;
+      right: 8px;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: #ffffff;
+      border: 1px solid #c9c9c9;
+      border-radius: 8px;
+      padding: 4px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .18);
+    }
+    .zoom-bar button {
+      width: 38px;
+      height: 34px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #111111;
+      border: 1px solid #c9c9c9;
+      background: #f6f6f6;
+      border-radius: 6px;
+      cursor: pointer;
+      touch-action: manipulation;
+    }
+    .zoom-bar button:active { background: #e0e0e0; }
+    .zoom-label {
+      min-width: 46px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: #111111;
+    }
+    main {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 70px 18px 64px;
+    }
+    h1 { font-size: 26px; font-weight: 700; color: #111111; margin: 0 0 10px; }
+    h2 { font-size: 22px; font-weight: 700; color: #111111; margin: 34px 0 12px; }
+    h3 { font-size: 16px; font-weight: 700; color: #111111; margin: 22px 0 8px; }
+    p { margin: 6px 0; }
+    .section {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #111111;
+      margin: 26px 0 8px;
+      text-transform: uppercase;
+    }
+    .note-title { font-size: 13px; font-weight: 700; color: #444444; margin: 30px 0 6px; }
+    .table-wrap { margin: 8px 0 24px; }
+    table { width: 100%; border-collapse: collapse; min-width: 560px; }
+    th {
+      text-align: left;
+      font-weight: 700;
+      color: #000000;
+      border-bottom: 2px solid #c9c9c9;
+      padding: 9px 12px;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+    td {
+      border-bottom: 1px solid #ececec;
+      padding: 10px 12px;
+      font-size: 14px;
+      vertical-align: top;
+    }
+    strong { font-weight: 700; color: #000000; }
+    .sep { color: #9aa0a6; font-weight: 400; margin: 0 2px; }
+    .horse-block { margin: 12px 0 22px; }
+    .horse { font-weight: 700; color: #111111; font-size: 15px; margin-bottom: 4px; }
+    .horse-block p { margin: 2px 0; font-size: 14px; }
+    @media (max-width: 640px) {
+      body { font-size: 15px; }
+      h2 { font-size: 19px; }
+      td, th { padding: 8px 8px; font-size: 13px; }
+    }
+  </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N0CWBQ8K4X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('' 'js''', new Date());
+  gtag('' 'config''', '' 'G-N0CWBQ8K4X''');
+</script>
+</head>
+<body>
+  <div class="zoom-bar">
+    <button type="button" onclick="setZoom(-0.15)" aria-label="Küçült">−</button>
+    <span class="zoom-label" id="zoomLabel">100%</span>
+    <button type="button" onclick="setZoom(0.15)" aria-label="Büyüt">+</button>
+    <button type="button" onclick="resetZoom()" aria-label="Sığdır">0</button>
+  </div>
+  <div class="page">
+  <main>
+<h1>ADANA 06.09.2026 - PROGRAM İSTATİSTİK</h1>
+<p>Not: Nadir J/A eşleşmesi ve genel J/A kombo istatistikleri tüm DB geneline göre hesaplandı; hipodrom bazlı değildir.</p>
+<div class="section">BİR ÖNCEKİ YARIŞ GÜNÜ PİST EĞİLİMİ</div>
+<p>Referans yarış günü: <strong>2026-08-30</strong></p>
+<div class="table-wrap"><table><thead><tr><th>Pist</th><th>Koşu</th><th>Kazanan Ön Grup</th><th>İlk 3 Derecesinde Ön Grup</th><th>Akış Eğilimi</th><th>Hat Eğilimi</th></tr></thead><tbody><tr><td>KUM</td><td><strong>3</strong></td><td><strong>2/3 = %66.7</strong></td><td><strong>2/9 = %22.2</strong></td><td>Geriden gelen eğilimi</td><td>İç/dış hat dengeli</td></tr><tr><td>SENTETİK</td><td><strong>6</strong></td><td><strong>4/6 = %66.7</strong></td><td><strong>10/18 = %55.6</strong></td><td>Ön grup eğilimi</td><td>İç/dış hat dengeli</td></tr></tbody></table></div>
+<p>Son üç toplantı: <strong>2026-08-30 / 2026-05-31 / 2026-05-24</strong></p>
+<div class="table-wrap"><table><thead><tr><th>Pist</th><th>Koşu</th><th>Kazanan Ön Grup</th><th>İlk 3 Derecesinde Ön Grup</th><th>Destek Eğilimi</th><th>Hat Eğilimi</th></tr></thead><tbody><tr><td>ÇİM</td><td><strong>11</strong></td><td><strong>4/11 = %36.4</strong></td><td><strong>12/33 = %36.4</strong></td><td>Geriden gelen eğilimi</td><td>Dış hat avantajlı</td></tr><tr><td>KUM</td><td><strong>10</strong></td><td><strong>7/10 = %70.0</strong></td><td><strong>13/30 = %43.3</strong></td><td>Ön grup eğilimi</td><td>Dış hat avantajlı</td></tr><tr><td>SENTETİK</td><td><strong>6</strong></td><td><strong>4/6 = %66.7</strong></td><td><strong>10/18 = %55.6</strong></td><td>Ön grup eğilimi</td><td>İç/dış hat dengeli</td></tr></tbody></table></div>
+<h2>1. Koşu - 1400 m - SENTETİK - Maiden/Dişi</h2>
+<div class="section">DİKKAT ÇEKİCİ GALOPLAR</div>
+<div class="table-wrap"><table><thead><tr><th>At</th><th>Galop</th><th>Sıralama</th><th>Tarih / Pist</th></tr></thead><tbody><tr><td>2-IRRITABLE GIRL</td><td>600: 0.40.90 / 400: 0.26.80</td><td>600 m: <strong>1/5</strong></td><td>4.09.2026 Kum Elazığ</td></tr><tr><td>6-DRAGON STAR</td><td>800: 0.50.00 / 400: 0.25.50</td><td>800 m: <strong>1/18</strong></td><td>4.09.2026 Sentetik Adana</td></tr><tr><td>5-AGRESİF LADY</td><td>400: 0.24.40</td><td>400 m: <strong>3/72</strong></td><td>4.09.2026 Sentetik Adana</td></tr><tr><td>7-FLASHING PEARL</td><td>1000: 1.08.70 / 800: 0.53.90 / 400: 0.26.50</td><td>1000 m: <strong>5/7</strong></td><td>3.09.2026 Sentetik Adana</td></tr><tr><td>11-SHOT HILL</td><td>600: 0.38.90 / 400: 0.24.80</td><td>400 m: <strong>7/72</strong></td><td>4.09.2026 Sentetik Adana</td></tr></tbody></table></div>
+<div class="section">61+ GÜN ARA VEREN AT</div>
+<div class="table-wrap"><table><thead><tr><th>At</th><th>Ara / Son Yarış</th><th>Ant 61+ Dönüş</th><th>2. Yarış</th></tr></thead><tbody><tr><td>7-FLASHING PEARL</td><td><strong>105 gün</strong>; 2026-05-24 ADANA S=7</td><td><strong>9/0 = %0.0</strong></td><td><strong>8/0 = %0.0</strong></td></tr></tbody></table></div>
+<div class="section">GENEL J/A KOMBO İLK 5</div>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>At</th><th>Jokey / Antrenör</th><th>J/A Kombo</th></tr></thead><tbody><tr><td>1</td><td>9-KEJE</td><td>M.S.ÇELİK / EN.KARATAŞ</td><td><strong>49/13 = %26.5</strong></td></tr><tr><td>2</td><td>1-FIRE OF VALERIA</td><td>SAL.ÇELİK / E.ACER</td><td><strong>23/1 = %4.3</strong></td></tr><tr><td>3</td><td>11-SHOT HILL</td><td>F.R.BEBEK / V.TEKİN</td><td><strong>24/1 = %4.2</strong></td></tr><tr><td>4</td><td>5-AGRESİF LADY</td><td>Y.CENGİZ / A.AKBABA</td><td><strong>33/1 = %3.0</strong></td></tr><tr><td>5</td><td>6-DRAGON STAR</td><td>F.ÇETİNBAŞ / Y.TUNCAY</td><td><strong>68/2 = %2.9</strong></td></tr></tbody></table></div>
+<h2>2. Koşu - 1200 m - SENTETİK - ŞARTLI 4/DHÖ</h2>
+<div class="section">DİKKAT ÇEKİCİ GALOPLAR</div>
+<div class="table-wrap"><table><thead><tr><th>At</th><th>Galop</th><th>Sıralama</th><th>Tarih / Pist</th></tr></thead><tbody><tr><td>9-İMPO</td><td>800: 0.55.60 / 600: 0.42.00 / 400: 0.28.20</td><td>800 m: <strong>4/22</strong></td><td>4.09.2026 Kum Adana</td></tr></tbody></table></div>
+<div class="section">İLK DEFA KOŞAN AT - ANTRENÖR VE ANNE KARDEŞ İLK YARIŞI KAZANMA ORANLARI</div>
+<div class="table-wrap"><table><thead><tr><th>At</th><th>Antrenör İlk Koşan</th><th>Anne Kardeş İlk Yarış</th><th>Sonuçlar</th></tr></thead><tbody><tr><td>9-İMPO</td><td><strong>30/1 = %3.3</strong></td><td><strong>1/0 = %0.0</strong></td><td><strong>(9)</strong></td></tr></tbody></table></div>
+<div class="section">GENEL J/A KOMBO İLK 5</div>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>At</th><th>Jokey / Antrenör</th><th>J/A Kombo</th></tr></thead><tbody><tr><td>1</td><td>3-ASLAN İBO</td><td>SAL.ÇELİK / V.TEKİN</td><td><strong>11/2 = %18.2</strong></td></tr><tr><td>2</td><td>5-GÖKAYHAN</td><td>M.S.ÇELİK / O.GİRİŞKİN</td><td><strong>9/1 = %11.1</strong></td></tr><tr><td>3</td><td>1-KERVAN SANCAĞI</td><td>E.ÇANKAYA / H.SUNKAR</td><td><strong>39/4 = %10.3</strong></td></tr><tr><td>4</td><td>7-TELLİ DERELİ</td><td>Y.CENGİZ / EY.YARDIMCI</td><td><strong>67/3 = %4.5</strong></td></tr><tr><td>5</td><td>10-KATI HANIM</td><td>M.AKDAĞ AP / Y.TUNCAY</td><td><strong>41/1 = %2.4</strong></td></tr></tbody></table></div>
+<h2>3. Koşu - 1400 m - SENTETİK - Maiden/Dişi</h2>
+<div class="section">DİKKAT ÇEKİCİ GALOPLAR</div>
+<div class="table-wrap"><table><thead><tr><th>At</th><th>Galop</th><th>Sıralama</th><th>Tarih / Pist</th></tr></thead><tbody><tr><td>7-HELL ANGEL</td><td>600: 0.36.80 / 400: 0.24.50</td><td>600 m: <strong>3/37</strong> - 400 m: <strong>4/72</strong></td><td>4.09.2026 Sentetik Adana</td></tr></tbody></table></div>
+<div class="section">61+ GÜN ARA VEREN AT</div>
+<div class="table-wrap"><table><thead><tr><th>At</th><th>Ara / Son Yarış</th><th>Ant 61+ Dönüş</th><th>2. Yarış</th></tr></thead><tbody><tr><td>2-BELL SLEEVE</td><td><strong>97 gün</strong>; 2026-06-01 SANLIURFA S=10</td><td><strong>41/1 = %2.4</strong></td><td><strong>35/3 = %8.6</strong></td></tr><tr><td>9-MONIQUE</td><td><strong>62 gün</strong>; 2026-07-06 BURSA S=5</td><td><strong>108/2 = %1.9</strong></td><td><strong>89/1 = %1.1</strong></td></tr></tbody></table></div>
+<div class="section">İLK DEFA KOŞAN AT - ANTRENÖR VE ANNE KARDEŞ İLK YARIŞI KAZANMA ORANLARI</div>
+<div class="table-wrap"><table><thead><tr><th>At</th><th>Antrenör İlk Koşan</th><th>Anne Kardeş İlk Yarış</th><th>Sonuçlar</th></tr></thead><tbody><tr><td>1-ATTRACTIVE GIRL</td><td><strong>48/3 = %6.2</strong></td><td><strong>2/0 = %0.0</strong></td><td><strong>(3-7)</strong></td></tr></tbody></table></div>
+<div class="section">GENEL J/A KOMBO İLK 5</div>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>At</th><th>Jokey / Antrenör</th><th>J/A Kombo</th></tr></thead><tbody><tr><td>1</td><td>8-İPTİSAM</td><td>M.T.COŞKUN AP / Y.TUNCAY</td><td><strong>25/2 = %8.0</strong></td></tr><tr><td>2</td><td>11-SYDNEY WIZARD</td><td>F.ÇETİNBAŞ / Y.TUNCAY</td><td><strong>68/2 = %2.9</strong></td></tr></tbody></table></div>
+<h2>4. Koşu - 1900 m - KUM - Handikap 14/Dişi /H2</h2>
+<div class="section">DİKKAT ÇEKİCİ GALOPLAR</div>
+<div class="table-wrap"><table><thead><tr><th>At</th><th>Galop</th><th>Sıralama</th><th>Tarih / Pist</th></tr></thead><tbody><tr><td>1-MİRA CETİ</td><td>600: 0.42.60 / 400: 0.27.00</td><td>600 m: <strong>1/1</strong> - 400 m: <strong>1/1</strong></td><td>27.08.2026 Kum Diyarbakır</td></tr><tr><td>13-PİTON KIZ</td><td>600: 0.40.00 / 400: 0.26.00</td><td>600 m: <strong>4/56</strong> - 400 m: <strong>11/149</strong></td><td>28.08.2026 Kum - İç Şanlıurfa</td></tr><tr><td>7-SOUTHERN SECRET</td><td>400: 0.23.70</td><td>400 m: <strong>5/413</strong></td><td>4.09.2026 Kum Ankara</td></tr><tr><td>9-RHINE FALLS</td><td>600: 0.36.70 / 400: 0.24.00</td><td>600 m: <strong>5/179</strong> - 400 m: <strong>16/413</strong></td><td>4.09.2026 Kum Ankara</td></tr><tr><td>16-LUNA DE FUEGO</td><td>600: 0.40.90 / 400: 0.26.00</td><td>400 m: <strong>11/149</strong></td><td>4.09.2026 Kum - İç Şanlıurfa</td></tr></tbody></table></div>
+<div class="section">61+ GÜN ARA VEREN AT</div>
+<div class="table-wrap"><table><thead><tr><th>At</th><th>Ara / Son Yarış</th><th>Ant 61+ Dönüş</th><th>2. Yarış</th></tr></thead><tbody><tr><td>2-QUEEN SEÇİL</td><td><strong>98 gün</strong>; 2026-05-31 ADANA S=5</td><td><strong>12/1 = %8.3</strong></td><td><strong>12/0 = %0.0</strong></td></tr><tr><td>5-DİNEDA</td><td><strong>133 gün</strong>; 2026-04-26 ADANA S=9</td><td><strong>108/2 = %1.9</strong></td><td><strong>89/1 = %1.1</strong></td></tr><tr><td>9-RHINE FALLS</td><td><strong>136 gün</strong>; 2026-04-23 ANKARA S=9</td><td><strong>14/1 = %7.1</strong></td><td><strong>14/1 = %7.1</strong></td></tr><tr><td>12-LADY ATAŞ</td><td><strong>66 gün</strong>; 2026-07-02 ANKARA S=6</td><td><strong>35/0 = %0.0</strong></td><td><strong>29/0 = %0.0</strong></td></tr><tr><td>15-MY DREAM HORSE</td><td><strong>61 gün</strong>; 2026-07-07 ANKARA S=11</td><td><strong>23/5 = %21.7</strong></td><td><strong>17/1 = %5.9</strong></td></tr></tbody></table></div>
+<div class="section">GENEL J/A KOMBO İLK 5</div>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>At</th><th>Jokey / Antrenör</th><th>J/A Kombo</th></tr></thead><tbody><tr><td>1</td><td>3-MALCOOBA</td><td>SERH.ÇELİK AP / A.ÇIKMAN</td><td><strong>2/2 = %100.0</strong></td></tr><tr><td>2</td><td>1-MİRA CETİ</td><td>L.TAPTIK AP / H.TEKİNALP</td><td><strong>21/2 = %9.5</strong></td></tr><tr><td>3</td><td>2-QUEEN SEÇİL</td><td>V.DEMİR / M.KILIÇSEREN</td><td><strong>11/1 = %9.1</strong></td></tr><tr><td>4</td><td>8-BOLUN</td><td>SAL.ÇELİK / Y.TUNCAY</td><td><strong>76/6 = %7.9</strong></td></tr><tr><td>5</td><td>7-SOUTHERN SECRET</td><td>M.S.ÇELİK / S.SÜSLÜ</td><td><strong>16/1 = %6.2</strong></td></tr></tbody></table></div>
+<h2>5. Koşu - 1200 m - SENTETİK - ŞARTLI 5/DHÖW</h2>
+<div class="section">DİKKAT ÇEKİCİ GALOPLAR</div>
+<div class="table-wrap"><table><thead><tr><th>At</th><th>Galop</th><th>Sıralama</th><th>Tarih / Pist</th></tr></thead><tbody><tr><td>12-ÇİMENGÖZ</td><td>600: 0.45.60 / 400: 0.29.50</td><td>400 m: <strong>10/236</strong></td><td>4.09.2026 Kum Şanlıurfa</td></tr></tbody></table></div>
+<div class="section">DİKKAT ÇEKİCİ SON 800</div>
+<div class="horse-block"><div class="horse">8-AĞA TALİP</div><p>Son yarış: 2026-08-10 BURSA 5. Koşu - 1400 m - KUM Normal - Şartlı 4-5</p><p>Son 800: <strong>53,58</strong> <span class="sep">•</span> Sınıf içi: <strong>4/242</strong> (en iyi <strong>52,97</strong>, fark <strong>+0,61 sn</strong>)</p><p>Sınıfsız: <strong>6/1471</strong> (en iyi <strong>52,97</strong>, fark <strong>+0,61 sn</strong>, en iyi derecenin sınıfı: Şartlı 4-5)</p></div>
+<div class="section">61+ GÜN ARA VEREN AT</div>
+<div class="table-wrap"><table><thead><tr><th>At</th><th>Ara / Son Yarış</th><th>Ant 61+ Dönüş</th><th>2. Yarış</th></tr></thead><tbody><tr><td>3-PALA SALİH</td><td><strong>90 gün</strong>; 2026-06-08 SANLIURFA S=7</td><td><strong>62/3 = %4.8</strong></td><td><strong>56/5 = %8.9</strong></td></tr><tr><td>10-ALMAS</td><td><strong>126 gün</strong>; 2026-05-03 ADANA S=9</td><td><strong>13/0 = %0.0</strong></td><td><strong>10/1 = %10.0</strong></td></tr></tbody></table></div>
+<div class="section">ARADAN SONRA 3. YARIŞ</div>
+<div class="table-wrap"><table><thead><tr><th>At</th><th>Ara</th><th>Dönüş Yarışı</th><th>2. Yarış</th></tr></thead><tbody><tr><td>9-AZERBAYCANLI</td><td><strong>152 gün</strong></td><td>2026-08-13 ANKARA S=9</td><td>2026-08-30 ADANA S=15</td></tr><tr><td>12-ÇİMENGÖZ</td><td><strong>135 gün</strong></td><td>2026-07-15 ELAZIG S=14</td><td>2026-08-30 ADANA S=16</td></tr></tbody></table></div>
+<div class="section">GENEL J/A KOMBO İLK 5</div>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>At</th><th>Jokey / Antrenör</th><th>J/A Kombo</th></tr></thead><tbody><tr><td>1</td><td>10-ALMAS</td><td>M.KIYAK AP / A.KARAKUŞ</td><td><strong>8/2 = %25.0</strong></td></tr><tr><td>2</td><td>3-PALA SALİH</td><td>SAL.ÇELİK / A.AKBABA</td><td><strong>5/1 = %20.0</strong></td></tr><tr><td>3</td><td>6-MİRŞEŞEN</td><td>M.S.ÇELİK / Y.TUNCAY</td><td><strong>66/8 = %12.1</strong></td></tr><tr><td>4</td><td>8-AĞA TALİP</td><td>E.ÇANKAYA / Y.TUNCAY</td><td><strong>58/7 = %12.1</strong></td></tr><tr><td>5</td><td>5-İSKİT ALP</td><td>F.R.BEBEK / Y.TUNCAY</td><td><strong>17/2 = %11.8</strong></td></tr></tbody></table></div>
+<h2>6. Koşu - 1900 m - SENTETİK - KV-6/DHT</h2>
+<div class="section">DİKKAT ÇEKİCİ GALOPLAR</div>
+<div class="table-wrap"><table><thead><tr><th>At</th><th>Galop</th><th>Sıralama</th><th>Tarih / Pist</th></tr></thead><tbody><tr><td>5-SERPENÇE</td><td>600: 0.43.00 / 400: 0.26.80</td><td>400 m: <strong>2/77</strong></td><td>4.09.2026 Sentetik Adana</td></tr><tr><td>7-HARPUT MUHAFIZI</td><td>800: 0.55.80 / 400: 0.28.20</td><td>800 m: <strong>5/22</strong></td><td>4.09.2026 Kum Adana</td></tr></tbody></table></div>
+<div class="section">61+ GÜN ARA VEREN AT</div>
+<div class="table-wrap"><table><thead><tr><th>At</th><th>Ara / Son Yarış</th><th>Ant 61+ Dönüş</th><th>2. Yarış</th></tr></thead><tbody><tr><td>8-SADIKEFE</td><td><strong>71 gün</strong>; 2026-06-27 DIYARBAKIR S=9</td><td><strong>68/7 = %10.3</strong></td><td><strong>62/6 = %9.7</strong></td></tr></tbody></table></div>
+<div class="section">GENEL J/A KOMBO İLK 5</div>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>At</th><th>Jokey / Antrenör</th><th>J/A Kombo</th></tr></thead><tbody><tr><td>1</td><td>7-HARPUT MUHAFIZI</td><td>M.A.SOLMAZ / Y.AKDAŞ</td><td><strong>1/1 = %100.0</strong></td></tr><tr><td>2</td><td>4-YUSUF KAPTAN</td><td>SAL.ÇELİK / Y.BAYSAL</td><td><strong>19/4 = %21.1</strong></td></tr><tr><td>3</td><td>2-SALAHİYET</td><td>M.S.ÇELİK / M.DAŞ</td><td><strong>58/10 = %17.2</strong></td></tr><tr><td>4</td><td>8-SADIKEFE</td><td>N.ALTIN / Y.BAYSAL</td><td><strong>45/7 = %15.6</strong></td></tr><tr><td>5</td><td>9-ÇIĞGİBİ</td><td>N.DEMİR / Y.BAYSAL</td><td><strong>28/1 = %3.6</strong></td></tr></tbody></table></div>
+<h2>7. Koşu - 1900 m - KUM - ŞARTLI 4</h2>
+<div class="section">DİKKAT ÇEKİCİ GALOPLAR</div>
+<div class="table-wrap"><table><thead><tr><th>At</th><th>Galop</th><th>Sıralama</th><th>Tarih / Pist</th></tr></thead><tbody><tr><td>1-PALURİ MAN</td><td>200: 0.12.30</td><td>200 m: <strong>1/1</strong></td><td>5.09.2026 Kum Adana</td></tr><tr><td>3-WE ARE THE STAR</td><td>800: 0.49.60 / 400: 0.25.00</td><td>800 m: <strong>2/31</strong></td><td>4.09.2026 Kum Adana</td></tr><tr><td>10-FEMALE EAGLE</td><td>800: 0.49.80 / 400: 0.25.00</td><td>800 m: <strong>4/31</strong></td><td>4.09.2026 Kum Adana</td></tr></tbody></table></div>
+<div class="section">DİKKAT ÇEKİCİ SON 800</div>
+<div class="horse-block"><div class="horse">1-PALURİ MAN</div><p>Son yarış: 2026-08-30 ADANA 7. Koşu - 2000 m - SENTETIK - Handikap 17-18</p><p>Son 800: <strong>53,15</strong> <span class="sep">•</span> Sınıf içi: <strong>2/11</strong> (en iyi <strong>52,60</strong>, fark <strong>+0,55 sn</strong>)</p><p>Sınıfsız: <strong>2/11</strong> (en iyi <strong>52,60</strong>, fark <strong>+0,55 sn</strong>, en iyi derecenin sınıfı: Handikap 17-18)</p></div>
+<div class="section">61+ GÜN ARA VEREN AT</div>
+<div class="table-wrap"><table><thead><tr><th>At</th><th>Ara / Son Yarış</th><th>Ant 61+ Dönüş</th><th>2. Yarış</th></tr></thead><tbody><tr><td>3-WE ARE THE STAR</td><td><strong>119 gün</strong>; 2026-05-10 ADANA S=3</td><td><strong>14/1 = %7.1</strong></td><td><strong>14/1 = %7.1</strong></td></tr><tr><td>7-DOUBLE HEART</td><td><strong>180 gün</strong>; 2026-03-10 ADANA S=11</td><td><strong>74/1 = %1.4</strong></td><td><strong>64/2 = %3.1</strong></td></tr><tr><td>9-TORTUGA</td><td><strong>208 gün</strong>; 2026-02-10 ADANA S=7</td><td><strong>23/5 = %21.7</strong></td><td><strong>17/1 = %5.9</strong></td></tr></tbody></table></div>
+<div class="section">GENEL J/A KOMBO İLK 5</div>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>At</th><th>Jokey / Antrenör</th><th>J/A Kombo</th></tr></thead><tbody><tr><td>1</td><td>2-SUNDANCE</td><td>SERH.ÇELİK AP / A.ÇIKMAN</td><td><strong>2/2 = %100.0</strong></td></tr><tr><td>2</td><td>8-JAN AQUA</td><td>M.AKYAVUZ / M.AKYAVUZ</td><td><strong>1/1 = %100.0</strong></td></tr><tr><td>3</td><td>5-BEST OF ANADOLU</td><td>SAL.ÇELİK / Y.BAYSAL</td><td><strong>19/4 = %21.1</strong></td></tr><tr><td>4</td><td>4-LAST LEVEL</td><td>M.S.ÇELİK / M.DAŞ</td><td><strong>58/10 = %17.2</strong></td></tr><tr><td>5</td><td>7-DOUBLE HEART</td><td>M.A.AKGÖBEK / V.TEKİN</td><td><strong>13/2 = %15.4</strong></td></tr></tbody></table></div>
+<h2>8. Koşu - 1300 m - KUM - Handikap 15 /H2</h2>
+<div class="section">DİKKAT ÇEKİCİ GALOPLAR</div>
+<div class="table-wrap"><table><thead><tr><th>At</th><th>Galop</th><th>Sıralama</th><th>Tarih / Pist</th></tr></thead><tbody><tr><td>12-TEK OZANIM</td><td>800: 0.56.50 / 400: 0.20.00</td><td>400 m: <strong>1/149</strong></td><td>4.09.2026 Kum - İç Şanlıurfa</td></tr><tr><td>4-GOLDEN SKIN</td><td>1000: 1.09.00 / 400: 0.26.60</td><td>1000 m: <strong>4/9</strong></td><td>29.08.2026 Kum - İç Şanlıurfa</td></tr><tr><td>6-TEK NERGİZ</td><td>600: 0.36.40 / 400: 0.24.20</td><td>600 m: <strong>5/50</strong> - 400 m: <strong>7/105</strong></td><td>4.09.2026 Kum Adana</td></tr><tr><td>14-LATİF AĞA</td><td>600: 0.40.20 / 400: 0.25.70</td><td>400 m: <strong>6/149</strong></td><td>4.09.2026 Kum - İç Şanlıurfa</td></tr></tbody></table></div>
+<div class="section">61+ GÜN ARA VEREN AT</div>
+<div class="table-wrap"><table><thead><tr><th>At</th><th>Ara / Son Yarış</th><th>Ant 61+ Dönüş</th><th>2. Yarış</th></tr></thead><tbody><tr><td>1-STAR GATE</td><td><strong>92 gün</strong>; 2026-06-06 ANKARA S=6</td><td><strong>53/4 = %7.5</strong></td><td><strong>49/4 = %8.2</strong></td></tr><tr><td>2-SUPERLINE</td><td><strong>64 gün</strong>; 2026-07-04 DIYARBAKIR S=11</td><td><strong>62/6 = %9.7</strong></td><td><strong>51/5 = %9.8</strong></td></tr><tr><td>4-GOLDEN SKIN</td><td><strong>619 gün</strong>; 2024-12-26 IZMIR S=7</td><td><strong>41/1 = %2.4</strong></td><td><strong>35/3 = %8.6</strong></td></tr><tr><td>9-MY SON NADİR</td><td><strong>159 gün</strong>; 2026-03-31 ADANA S=4</td><td><strong>53/4 = %7.5</strong></td><td><strong>49/4 = %8.2</strong></td></tr><tr><td>15-FIRE OF SOPHIE</td><td><strong>162 gün</strong>; 2026-03-28 ADANA S=9</td><td><strong>23/5 = %21.7</strong></td><td><strong>17/1 = %5.9</strong></td></tr></tbody></table></div>
+<div class="section">GENEL J/A KOMBO İLK 5</div>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>At</th><th>Jokey / Antrenör</th><th>J/A Kombo</th></tr></thead><tbody><tr><td>1</td><td>14-LATİF AĞA</td><td>M.A.AKGÖBEK / RES.KAYA</td><td><strong>22/4 = %18.2</strong></td></tr><tr><td>2</td><td>5-İSMETİM</td><td>İ.KATAR / S.KARAKEÇİLİ</td><td><strong>178/25 = %14.0</strong></td></tr><tr><td>3</td><td>3-TURBO FANI</td><td>M.BAYIR / Y.TUNCAY</td><td><strong>23/3 = %13.0</strong></td></tr><tr><td>4</td><td>9-MY SON NADİR</td><td>F.ÇETİNBAŞ / R.TAŞDELEN</td><td><strong>64/8 = %12.5</strong></td></tr><tr><td>5</td><td>8-MUALLİMBEY</td><td>F.R.BEBEK / Y.TUNCAY</td><td><strong>17/2 = %11.8</strong></td></tr></tbody></table></div>
+<div class="note-title">KONTROL ÖZETİ</div>
+<p>Kullanılan DB: C:\Users\Monster\Documents\Codex\2026-05-25\tjk-org-sitesinden-son-1-y\tjk_beyer_project\tjk_beyer_v2.db</p><p>DB tarih aralığı: 2023-06-01 - 2026-09-05</p><p>Program CSV: C:\Users\Monster\Documents\Codex\2026-05-25\tjk-org-sitesinden-son-1-y\tjk_beyer_project\work\programs_20260906\2026-09-06_adana_program_raw.csv</p><p>Analiz edilen at: 100</p><p>61+ ara at: 19</p><p>Aradan sonra 3. yarış sinyali: 2</p><p>İlk defa koşan: 2</p><p>Nadir J/A eşleşmesi: 0</p><p>Eksik veri uyarısı: DB son sonuç tarihi 2026-09-05; sonraki sonuçlar henüz DB&#x27;de yok.</p><p>DB&#x27;ye yazılmadı.</p>
+  </main>
+  </div>
+  <script>
+    (function () {
+      var MIN = 0.25, MAX = 3;
+      var page = document.querySelector('.page');
+      var label = document.getElementById('zoomLabel');
+      function load() {
+        try { return Number(localStorage.getItem('istatistikReportZoom') || '1'); }
+        catch (e) { return 1; }
+      }
+      function save(v) {
+        try { localStorage.setItem('istatistikReportZoom', v.toFixed(2)); }
+        catch (e) {}
+      }
+      function naturalWidth() {
+        page.style.setProperty('--report-zoom', '1');
+        var w = document.documentElement.scrollWidth;
+        return w;
+      }
+      var reportZoom = 1;
+      function applyZoom() {
+        reportZoom = Math.max(MIN, Math.min(MAX, reportZoom));
+        page.style.setProperty('--report-zoom', reportZoom.toFixed(2));
+        label.textContent = Math.round(reportZoom * 100) + '%';
+        save(reportZoom);
+      }
+      function fitToViewport() {
+        var w = naturalWidth();
+        var vw = window.innerWidth;
+        reportZoom = (vw / w) < 1 ? (vw / w) : 1;
+        reportZoom = Math.max(MIN, Math.min(MAX, reportZoom));
+        applyZoom();
+      }
+      window.setZoom = function (d) { reportZoom = Math.max(MIN, Math.min(MAX, (Number.isFinite(reportZoom) ? reportZoom : 1) + d)); applyZoom(); };
+      window.resetZoom = function () { fitToViewport(); };
+      var stored = load();
+      if (stored > 1.001) {
+        reportZoom = stored;
+        applyZoom();
+      } else {
+        fitToViewport();
+      }
+      window.addEventListener('resize', function () {
+        if (reportZoom <= 1.001) { fitToViewport(); }
+      });
+    })();
+  </script>
+</body>
+</html>
