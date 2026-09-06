@@ -55,7 +55,30 @@ Yeni günün raporları (kaynak dosyalar) masaüstündeki şu klasörlerde hazı
    - `sitemap.xml`'deki eski gün URL'lerini kaldır.
    Sitede yalnızca en güncel günün raporları kalır.
 
-8. **Commit/push talimatı:** Kullanıcıya kısa commit mesajı ver, örn:
+8. **Önceki günün sonuç değerlendirmesini üret (HER GÜN):**
+   Bu rapor, **bir önceki günün yarış sonuçlarına** göre hız figürü metriklerinin
+   (Erken / Kapanış / Son 3 Ort. / Son Hız / Aynı Yüzey) doğruluk analizidir.
+   Beyer projesinde çalıştır:
+   ```
+   python src\daily_result_evaluation.py --date <YYYY-MM-DD> --split-tracks
+   ```
+   (çalışma dizini: `C:\Users\Monster\Documents\Codex\2026-05-25\tjk-org-sitesinden-son-1-y\tjk_beyer_project`)
+   - `--date`: **önceki günün** ISO tarihi (örn. bugün 07.09 ise `2026-09-06`).
+   - Sonuçlar DB'de (`tjk_beyer_v2.db`) olmalıdır; DB'de sonuç yoksa değerlendirme üretilemez
+     (sonuçlar genellikle yarış günü akşamı/sonrasında DB'ye işlenir).
+   - `reports\daily_beyer\<date>_<sehir>_evaluation.html` dosyaları oluşur; sadece
+     şehir başına değerlendirme dosyaları kullanılır (`general` dosyası yüklenmez).
+
+9. **Değerlendirme dosyalarını `rapor/` klasörüne ekle + kart + sitemap:**
+   - Dosyaları `<sehir>-<gun>-<ay>-degerlendirme.html` adıyla kopyala
+     (örn. `istanbul-6-eylul-degerlendirme.html`). gtag bloğunu `</head>` öncesine ekle.
+   - `raporlar.html` ve `index.html`'e, diğer kartların **üstüne** 1'er kart ekle.
+     Etiket: `Önceki Günün Değerlendirmesi`. Açıklamada koşu sayısı belirtilir.
+   - `sitemap.xml`'e değerlendirme URL'lerini ekle (rapor URL'leriyle birlikte).
+   - Eski günün değerlendirme dosyasını/kartlarını/URL'lerini SİL (yalnızca en güncel
+     "önceki günün değerlendirmesi" kalır).
+
+10. **Commit/push talimatı:** Kullanıcıya kısa commit mesajı ver, örn:
    `02.09.2026 raporlari eklendi, 01.09 raporlari silindi`
    (GitHub Desktop: Commit to main → Push origin)
 
