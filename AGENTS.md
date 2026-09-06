@@ -57,7 +57,7 @@ Yeni günün raporları (kaynak dosyalar) masaüstündeki şu klasörlerde hazı
 
 8. **Önceki günün sonuç değerlendirmesini üret (HER GÜN):**
    Bu rapor, **bir önceki günün yarış sonuçlarına** göre hız figürü metriklerinin
-   (Erken / Kapanış / Son 3 Ort. / Son Hız / Aynı Yüzey) doğruluk analizidir.
+   (Erken / Kapanış / Son 3 Ort. / Son Hız) doğruluk analizidir.
    Beyer projesinde çalıştır:
    ```
    python src\daily_result_evaluation.py --date <YYYY-MM-DD> --split-tracks
@@ -68,6 +68,8 @@ Yeni günün raporları (kaynak dosyalar) masaüstündeki şu klasörlerde hazı
      (sonuçlar genellikle yarış günü akşamı/sonrasında DB'ye işlenir).
    - `reports\daily_beyer\<date>_<sehir>_evaluation.html` dosyaları oluşur; sadece
      şehir başına değerlendirme dosyaları kullanılır (`general` dosyası yüklenmez).
+   - Değerlendirmede "Aynı Yüzey" kartları/sütunları ve "Kontrol edilmesi gereken
+     yüksek Son Hız liderleri" notu ÜRETİLMEZ (kullanıcı onayladı, HER ZAMAN UYGULA).
 
 9. **Değerlendirme dosyalarını `rapor/` klasörüne ekle + kart + sitemap:**
    - Dosyaları `<sehir>-<gun>-<ay>-degerlendirme.html` adıyla kopyala
@@ -77,6 +79,17 @@ Yeni günün raporları (kaynak dosyalar) masaüstündeki şu klasörlerde hazı
    - `sitemap.xml`'e değerlendirme URL'lerini ekle (rapor URL'leriyle birlikte).
    - Eski günün değerlendirme dosyasını/kartlarını/URL'lerini SİL (yalnızca en güncel
      "önceki günün değerlendirmesi" kalır).
+
+9b. **Adana sentetik par time güncellemesi (beyer projesinde otomatik):**
+   Adana hipodromunda sentetik pist yeni olduğundan par time örneği azdır.
+   `daily_results_beyer.py` (beyer projesi `src/`) her sonuç işlemede, o gün Adana
+   sentetik koşusu varsa Adana SENTETIK par time'larını otomatik yeniden hesaplar
+   (`rebuild_par_times` track/surface filtreli; diğer par time'lar ve aylık kilit
+   değişmez). Manuel çağrı gerekirse:
+   ```
+   python src\daily_results_beyer.py --date YYYY-MM-DD
+   ```
+   Bu komut özetinde "Adana sentetik par time güncelleme" satırı görünür.
 
 10. **Commit/push talimatı:** Kullanıcıya kısa commit mesajı ver, örn:
    `02.09.2026 raporlari eklendi, 01.09 raporlari silindi`
