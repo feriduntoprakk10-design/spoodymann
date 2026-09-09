@@ -79,6 +79,10 @@ Yeni günün raporları (kaynak dosyalar) masaüstündeki şu klasörlerde hazı
    - `sitemap.xml`'e değerlendirme URL'lerini ekle (rapor URL'leriyle birlikte).
    - Eski günün değerlendirme dosyasını/kartlarını/URL'lerini SİL (yalnızca en güncel
      "önceki günün değerlendirmesi" kalır).
+   - **Aynı-yüzey kuralı (09.09.2026'dan itibaren, HER ZAMAN UYGULA):** `*ayni_yuzey*`
+     değerlendirme dosyaları ÜRETİLMEZ ve siteye YÜKLENMEZ. `rapor/` içindeki
+     `*ayni_yuzey*` dosyaları, kartları ve sitemap URL'leri her yüklemede SİLİNİR
+     (`scripts/site-yukle-22-30.ps1` bunu otomatik yapar).
 
 9b. **Adana sentetik par time güncellemesi (beyer projesinde otomatik):**
    Adana hipodromunda sentetik pist yeni olduğundan par time örneği azdır.

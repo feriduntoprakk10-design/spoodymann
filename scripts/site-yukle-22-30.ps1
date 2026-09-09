@@ -224,7 +224,7 @@ if (Test-Path $SrcDeger) {
         $m = [regex]::Match($f.Name, "^${oncekiIso}_(.+)_evaluation\.html$")
         if (-not $m.Success) { continue }
         $dsehir = ToAsciiLower $m.Groups[1].Value
-        if ($dsehir -eq 'general') { continue }
+        if ($dsehir -eq 'general' -or $dsehir -like '*ayni_yuzey*') { continue }
         $g = SehirGoster $dsehir
         $hedefAd = "$dsehir-$oncekiGun-$oncekiAyDosya-degerlendirme.html"
         $t = OkuDosya $f.FullName
@@ -239,6 +239,11 @@ if (Test-Path $SrcDeger) {
 if ($degerKart.Count -eq 0) { Write-Output "UYARI: $oncekiIso icin degerlendirme dosyasi yok - kart uretilmedi." }
 
 # ---------- 5. Eski gun dosyalari ----------
+# Ayni-yuzey degerlendirmeleri siteye yuklenmez; eski kalintilar temizlenir.
+foreach ($f in Get-ChildItem $RaporDir -Filter '*ayni_yuzey*') {
+    Write-Output "SIL (ayni-yuzey): rapor/$($f.Name)"
+    if (-not $WhatIf) { Remove-Item $f.FullName -Force }
+}
 $ayDesen = $AyTers.Keys -join '|'
 $silinenTarihler = New-Object System.Collections.Generic.HashSet[string]
 foreach ($f in Get-ChildItem $RaporDir -Filter '*.html') {
@@ -288,7 +293,7 @@ foreach ($k in $kartVerisi) {
     }
 }
 
-$tarihliHref = 'href="rapor/[a-z]+-\d{1,2}-(?:' + ($AyTers.Keys -join '|') + ')(?:-[a-z-]+)?\.html"'
+$tarihliHref = 'href="rapor/[a-z_]+-\d{1,2}-(?:' + ($AyTers.Keys -join '|') + ')(?:-[a-z-]+)?\.html"'
 foreach ($sayfa in @((Join-Path $RepoRoot 'raporlar.html'), (Join-Path $RepoRoot 'index.html'))) {
     $html = OkuDosya $sayfa
     $bloklar = [regex]::Matches($html, '(?s)<article class="card">.*?</article>')
@@ -307,7 +312,7 @@ $sm = OkuDosya $sitemapYol
 $tabanUrl = 'https://feriduntoprakk10-design.github.io/spoodymann'
 $m0 = [regex]::Match($sm, '(https://[^<"]+/spoodymann)/rapor/')
 if ($m0.Success) { $tabanUrl = $m0.Groups[1].Value }
-$sm = [regex]::Replace($sm, '(?s)<url>\s*<loc>[^<]*?/rapor/[a-z]+-\d{1,2}-(?:' + ($AyTers.Keys -join '|') + ')(?:-[a-z-]+)?\.html</loc>\s*</url>\s*', '')
+$sm = [regex]::Replace($sm, '(?s)<url>\s*<loc>[^<]*?/rapor/[a-z_]+-\d{1,2}-(?:' + ($AyTers.Keys -join '|') + ')(?:-[a-z-]+)?\.html</loc>\s*</url>\s*', '')
 $yeniUrl = New-Object System.Collections.Generic.List[string]
 foreach ($d in $yeniDosyalar) {
     $yeniUrl.Add("<url>`r`n    <loc>$tabanUrl/rapor/$d</loc>`r`n  </url>") | Out-Null
