@@ -329,7 +329,14 @@ if ($eski -eq '') { $eski = 'yok' }
 Write-Output "Silinen eski raporlar: $eski"
 $commitGun = $Hedef.ToString('dd.MM.yyyy')
 if ($silinenTarihler.Count -gt 0) {
-    Write-Output "Onerilen commit mesaji: $commitGun raporlari eklendi, $eski raporlari silindi"
+    $commitTam = "$commitGun raporlari eklendi, $eski raporlari silindi"
 } else {
-    Write-Output "Onerilen commit mesaji: $commitGun raporlari eklendi"
+    $commitTam = "$commitGun raporlari eklendi"
+}
+Write-Output "Onerilen commit mesaji: $commitTam"
+$mesajDosya = 'C:\Users\Monster\OneDrive\Desktop\spoodyman-commit-mesaji.txt'
+$mesajIcerik = "Tarih: $(Get-Date -Format 'dd.MM.yyyy HH:mm')`r`nOnerilen commit mesaji: $commitTam`r`nEklenen dosya: $($yeniDosyalar.Count), eklenen kart: $($yeniKartlar.Count)`r`nSilinen eski raporlar: $eski`r`n"
+if (-not $WhatIf) {
+    [System.IO.File]::WriteAllText($mesajDosya, $mesajIcerik, $NoBom)
+    Write-Output "Commit mesaji dosyaya yazildi: $mesajDosya"
 }
