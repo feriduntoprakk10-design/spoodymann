@@ -61,6 +61,20 @@ function OkuDosya([string]$yol) {
     return [System.IO.File]::ReadAllText($yol)
 }
 
+function BildirimGoster([string]$baslik, [string]$mesaj) {
+    try {
+        [Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime] | Out-Null
+        $sablon = [Windows.UI.Notifications.ToastNotificationManager]::GetTemplateContent([Windows.UI.Notifications.ToastTemplateType]::ToastText02)
+        $metinler = $sablon.GetElementsByTagName('text')
+        $metinler.Item(0).AppendChild($sablon.CreateTextNode($baslik)) | Out-Null
+        $metinler.Item(1).AppendChild($sablon.CreateTextNode($mesaj)) | Out-Null
+        $bildirim = [Windows.UI.Notifications.ToastNotification]::new($sablon)
+        [Windows.UI.Notifications.ToastNotificationManager]::CreateToastNotifier('{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\WindowsPowerShell\v1.0\powershell.exe').Show($bildirim)
+    } catch {
+        Write-Output "UYARI: bildirim gosterilemedi ($($_.Exception.Message))"
+    }
+}
+
 # ---------- 1. Hedef tarihi belirle ----------
 $HedefIso = ''
 $sehirler = New-Object System.Collections.Generic.HashSet[string]
@@ -339,4 +353,5 @@ $mesajIcerik = "Tarih: $(Get-Date -Format 'dd.MM.yyyy HH:mm')`r`nOnerilen commit
 if (-not $WhatIf) {
     [System.IO.File]::WriteAllText($mesajDosya, $mesajIcerik, $NoBom)
     Write-Output "Commit mesaji dosyaya yazildi: $mesajDosya"
+    BildirimGoster 'Spoodyman 22:30 yukleme bitti' $commitTam
 }
