@@ -82,31 +82,38 @@ if ($Tarih -ne '') {
     $d = [datetime]::ParseExact($Tarih, 'dd/MM/yyyy', $null)
     $HedefIso = $d.ToString('yyyy-MM-dd')
 }
-if ($HedefIso -eq '') {
+if ($HedefIso -eq '' -or $sehirTarih.Count -eq 0) {
     $tarihler = New-Object System.Collections.Generic.List[string]
+    $sehirTarih = New-Object System.Collections.Generic.List[string]
     if (Test-Path $SrcBeyer) {
         foreach ($f in Get-ChildItem $SrcBeyer -Filter '*.html') {
             $m = [regex]::Match($f.Name, '^program_beyer_(.+)_(\d{8})(_normal)?\.html$')
-            if ($m.Success) { $tarihler.Add($m.Groups[2].Value); $sehirler.Add($m.Groups[1].Value.ToLower()) | Out-Null }
+            if ($m.Success) { $tarihler.Add($m.Groups[2].Value); $sehirTarih.Add($m.Groups[2].Value + '|' + $m.Groups[1].Value.ToLower()) | Out-Null }
         }
     }
     if (Test-Path $SrcKilit) {
         foreach ($f in Get-ChildItem $SrcKilit -Filter '*.html') {
-            $m = [regex]::Match($f.Name, '_(\d{8})\.html$')
-            if ($m.Success) { $tarihler.Add($m.Groups[1].Value) }
+            $m = [regex]::Match($f.Name, '^kilit_yaris_(.+)_tum_kosular_(\d{8})\.html$')
+            if ($m.Success) { $tarihler.Add($m.Groups[2].Value); $sehirTarih.Add($m.Groups[2].Value + '|' + $m.Groups[1].Value.ToLower()) | Out-Null }
         }
     }
-    foreach ($dir in @($SrcSinif, $SrcTempo)) {
-        if (Test-Path $dir) {
-            foreach ($f in Get-ChildItem $dir -Filter '*.html') {
-                $m = [regex]::Match($f.Name, '^(\d{4}-\d{2}-\d{2})_')
-                if ($m.Success) { $tarihler.Add($m.Groups[1].Value.Replace('-','')) }
-            }
+    if (Test-Path $SrcSinif) {
+        foreach ($f in Get-ChildItem $SrcSinif -Filter '*.html') {
+            $m = [regex]::Match($f.Name, '^(\d{4}-\d{2}-\d{2})_(.+)_sinif_dusme_analizi\.html$')
+            if ($m.Success) { $tarihler.Add($m.Groups[1].Value.Replace('-','')); $sehirTarih.Add($m.Groups[1].Value.Replace('-','') + '|' + (ToAsciiLower $m.Groups[2].Value)) | Out-Null }
         }
     }
-    if ($tarihler.Count -eq 0) { Write-Output 'HATA: kaynak klasorlerde tarihli rapor bulunamadi.'; exit 1 }
-    $enYeni = ($tarihler | Sort-Object -Descending | Select-Object -First 1)
-    $HedefIso = $enYeni.Substring(0,4) + '-' + $enYeni.Substring(4,2) + '-' + $enYeni.Substring(6,2)
+    if (Test-Path $SrcTempo) {
+        foreach ($f in Get-ChildItem $SrcTempo -Filter '*.html') {
+            $m = [regex]::Match($f.Name, '^(\d{4}-\d{2}-\d{2})_onde_giden_.+\.html$')
+            if ($m.Success) { $tarihler.Add($m.Groups[1].Value.Replace('-','')) }
+        }
+    }
+    if ($HedefIso -eq '') {
+        if ($tarihler.Count -eq 0) { Write-Output 'HATA: kaynak klasorlerde tarihli rapor bulunamadi.'; exit 1 }
+        $enYeni = ($tarihler | Sort-Object -Descending | Select-Object -First 1)
+        $HedefIso = $enYeni.Substring(0,4) + '-' + $enYeni.Substring(4,2) + '-' + $enYeni.Substring(6,2)
+    }
 }
 $Hedef = [datetime]::ParseExact($HedefIso, 'yyyy-MM-dd', $null)
 $gun = $Hedef.Day.ToString()
@@ -117,15 +124,13 @@ $ddMMyyyy = $Hedef.ToString('dd/MM/yyyy')
 $basic = $Hedef.ToString('yyyyMMdd')
 Write-Output "Hedef tarih: $ddMMyyyy"
 
-# Sehirleri dosya adlarindan topla (kilit + beyer)
-foreach ($dir in @($SrcKilit, $SrcBeyer)) {
-    if (!(Test-Path $dir)) { continue }
-    foreach ($f in Get-ChildItem $dir -Filter '*.html') {
-        $m = [regex]::Match($f.Name, '^(?:kilit_yaris|program_beyer)_(.+?)(?:_tum_kosular)?_\d{8}(_normal)?\.html$')
-        if ($m.Success) { $sehirler.Add($m.Groups[1].Value.ToLower()) | Out-Null }
-    }
+# Sehirler: yalnizca hedef tarihe ait cekirdek dosyalardan (beyerkilit/sinif)
+$hedefBasicSehir = $Hedef.ToString('yyyyMMdd')
+foreach ($kayit in $sehirTarih) {
+    $parca = $kayit -split '\|', 2
+    if ($parca[0] -eq $hedefBasicSehir) { $sehirler.Add($parca[1]) | Out-Null }
 }
-if ($sehirler.Count -eq 0) { Write-Output 'HATA: kaynaklardan sehir tespit edilemedi.'; exit 1 }
+if ($sehirler.Count -eq 0) { Write-Output 'HATA: hedef tarihe ait sehir bulunamadi (kaynaklar eksik olabilir).'; exit 1 }
 
 # ---------- 2. Sehir siralamasi (ilk yaris saati) ----------
 $sira = New-Object System.Collections.Generic.List[string]
@@ -176,6 +181,7 @@ function KopyalaRapor([string]$kaynak, [string]$hedefAd, [switch]$BeyerTemizle) 
 }
 
 $yeniDosyalar = New-Object System.Collections.Generic.List[string]
+$isList = @()
 $kartVerisi = @()
 foreach ($sehir in $sira) {
     $g = SehirGoster $sehir
@@ -186,44 +192,63 @@ foreach ($sehir in $sira) {
     if (-not $beyer) { $beyer = Get-ChildItem $SrcBeyer -Filter "program_beyer_${sehir}_${basic}.html" -ErrorAction SilentlyContinue | Select-Object -First 1 }
     $kilit = Get-ChildItem $SrcKilit -Filter "kilit_yaris_${sehir}_tum_kosular_${basic}.html" -ErrorAction SilentlyContinue | Select-Object -First 1
     $istat = Get-ChildItem $SrcIstat -Filter '*.html' -ErrorAction SilentlyContinue | Where-Object { (ToAsciiLower ([System.IO.Path]::GetFileNameWithoutExtension($_.Name))) -eq (ToAsciiLower $sehir) } | Select-Object -First 1
+    if ($istat) {
+        $tIstatKontrol = OkuDosya $istat.FullName
+        $mIstatTarih = [regex]::Match($tIstatKontrol, '<title>[^<]*?(\d{2})\.(\d{2})\.(\d{4})')
+        if (-not $mIstatTarih.Success -or $mIstatTarih.Groups[1].Value.TrimStart('0') -ne $gun -or $mIstatTarih.Groups[2].Value -ne $ayNo -or $mIstatTarih.Groups[3].Value -ne $Hedef.Year.ToString()) {
+            Write-Output "EKSIK: $g icin istatistik dosyasi bayat ($($istat.Name)) - yok sayildi."
+            $istat = $null
+        }
+    }
     $sinif = Get-ChildItem $SrcSinif -Filter "${HedefIso}_${sehir}_sinif_dusme_analizi.html" -ErrorAction SilentlyContinue | Select-Object -First 1
     $tempo = Get-ChildItem $SrcTempo -Filter '*.html' -ErrorAction SilentlyContinue | Where-Object { $_.Name -match "^${HedefIso}_onde_giden_.*" -and $_.Name -match ("_" + [regex]::Escape($sehir) + "(_|\.)") } | Select-Object -First 1
 
     if ($beyer) {
         $t = OkuDosya $beyer.FullName
         $kosu = ([regex]::Matches($t, '<section')).Count
-        KopyalaRapor $beyer.FullName "$taban.html" -BeyerTemizle | Out-Null
-        $yeniDosyalar.Add("$taban.html") | Out-Null
+        $isList += [pscustomobject]@{ Tur='beyer'; SehirGoster=$g; Kaynak=$beyer.FullName; KaynakAd=$beyer.Name; HedefAd="$taban.html"; BeyerTemizle=$true; Bilgi="$kosu kosu" }
         $bulundu['beyer'] = $kosu
-        Write-Output "OK beyer: $($beyer.Name) -> $taban.html ($kosu kosu)"
-    } else { Write-Output "UYARI: $g icin beyer kaynagi yok." }
+    } else { Write-Output "EKSIK: $g icin beyer kaynagi yok." }
     if ($kilit) {
-        KopyalaRapor $kilit.FullName "$taban-kilit-yaris.html" | Out-Null
-        $yeniDosyalar.Add("$taban-kilit-yaris.html") | Out-Null
+        $isList += [pscustomobject]@{ Tur='kilit'; SehirGoster=$g; Kaynak=$kilit.FullName; KaynakAd=$kilit.Name; HedefAd="$taban-kilit-yaris.html"; BeyerTemizle=$false; Bilgi='' }
         $bulundu['kilit'] = $true
-        Write-Output "OK kilit: $($kilit.Name) -> $taban-kilit-yaris.html"
-    } else { Write-Output "UYARI: $g icin kilit kaynagi yok." }
+    } else { Write-Output "EKSIK: $g icin kilit kaynagi yok." }
     if ($tempo) {
-        KopyalaRapor $tempo.FullName "$taban-tempo.html" | Out-Null
-        $yeniDosyalar.Add("$taban-tempo.html") | Out-Null
+        $isList += [pscustomobject]@{ Tur='tempo'; SehirGoster=$g; Kaynak=$tempo.FullName; KaynakAd=$tempo.Name; HedefAd="$taban-tempo.html"; BeyerTemizle=$false; Bilgi='' }
         $bulundu['tempo'] = $true
-        Write-Output "OK tempo: $($tempo.Name) -> $taban-tempo.html"
-    } else { Write-Output "UYARI: $g icin tempo kaynagi yok." }
+    } else { Write-Output "EKSIK: $g icin tempo kaynagi yok." }
     if ($istat) {
-        KopyalaRapor $istat.FullName "$taban-istatistik.html" | Out-Null
-        $yeniDosyalar.Add("$taban-istatistik.html") | Out-Null
+        $isList += [pscustomobject]@{ Tur='istatistik'; SehirGoster=$g; Kaynak=$istat.FullName; KaynakAd=$istat.Name; HedefAd="$taban-istatistik.html"; BeyerTemizle=$false; Bilgi='' }
         $bulundu['istat'] = $true
-        Write-Output "OK istatistik: $($istat.Name) -> $taban-istatistik.html"
-    } else { Write-Output "UYARI: $g icin istatistik kaynagi yok." }
+    } else { Write-Output "EKSIK: $g icin istatistik kaynagi yok." }
     if ($sinif) {
         $t = OkuDosya $sinif.FullName
         $kosuS = ([regex]::Matches($t, '<section')).Count
-        KopyalaRapor $sinif.FullName "$taban-sinif-dusme.html" | Out-Null
-        $yeniDosyalar.Add("$taban-sinif-dusme.html") | Out-Null
+        $isList += [pscustomobject]@{ Tur='sinif'; SehirGoster=$g; Kaynak=$sinif.FullName; KaynakAd=$sinif.Name; HedefAd="$taban-sinif-dusme.html"; BeyerTemizle=$false; Bilgi="$kosuS kosu" }
         $bulundu['sinif'] = $kosuS
-        Write-Output "OK sinif: $($sinif.Name) -> $taban-sinif-dusme.html ($kosuS kosu)"
-    } else { Write-Output "UYARI: $g icin sinif-dusme kaynagi yok." }
+    } else { Write-Output "EKSIK: $g icin sinif-dusme kaynagi yok." }
     $kartVerisi += [pscustomobject]@{ Sehir = $sehir; Goster = $g; Taban = $taban; Rapor = $bulundu }
+}
+
+# ---------- 3b. Eksiksizlik kilidi: her sehirde 5 tur tam olmali, yoksa HICBIR SEY yazilmaz ----------
+$eksikler = New-Object System.Collections.Generic.List[string]
+foreach ($k in $kartVerisi) {
+    foreach ($tur in @('beyer','kilit','tempo','istat','sinif')) {
+        if (-not $k.Rapor.ContainsKey($tur)) { $eksikler.Add("$($k.Goster)/$tur") | Out-Null }
+    }
+}
+if ($eksikler.Count -gt 0) {
+    Write-Output "DURDU: hedef tarih $ddMMyyyy icin eksik kaynaklar var: $($eksikler -join ', ')"
+    Write-Output 'Siteye hicbir sey yazilmadi (eski raporlar korundu).'
+    if (-not $WhatIf) { BildirimGoster 'Spoodyman yukleme DURDU' "Eksik kaynak ($($eksikler.Count)): $ddMMyyyy" }
+    exit 2
+}
+foreach ($is in $isList) {
+    if ($is.BeyerTemizle) { KopyalaRapor $is.Kaynak $is.HedefAd -BeyerTemizle | Out-Null }
+    else { KopyalaRapor $is.Kaynak $is.HedefAd | Out-Null }
+    $yeniDosyalar.Add($is.HedefAd) | Out-Null
+    if ($is.Bilgi -ne '') { Write-Output "OK $($is.Tur): $($is.KaynakAd) -> $($is.HedefAd) ($($is.Bilgi))" }
+    else { Write-Output "OK $($is.Tur): $($is.KaynakAd) -> $($is.HedefAd)" }
 }
 
 # ---------- 4. Degerlendirme (onceki gun) ----------
