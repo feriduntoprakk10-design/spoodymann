@@ -81,7 +81,7 @@ $sehirler = New-Object System.Collections.Generic.HashSet[string]
 $tarihler = New-Object System.Collections.Generic.List[string]
 $sehirTarih = New-Object System.Collections.Generic.List[string]
 if ($Tarih -ne '') {
-    $d = [datetime]::ParseExact($Tarih, 'dd/MM/yyyy', $null)
+    $d = [datetime]::ParseExact($Tarih, 'dd/MM/yyyy', [System.Globalization.CultureInfo]::InvariantCulture)
     $HedefIso = $d.ToString('yyyy-MM-dd')
 }
 # Kaynaklari HER ZAMAN tara (hem otomatik tarih tespiti hem de -Tarih ile verilen
@@ -120,7 +120,7 @@ $gun = $Hedef.Day.ToString()
 $ayNo = $Hedef.ToString('MM')
 $hedefAy = $AyDosya[$ayNo]
 $TarihEtiket = "$gun $($AyAd[$ayNo]) $($Hedef.Year)"
-$ddMMyyyy = $Hedef.ToString('dd/MM/yyyy')
+$ddMMyyyy = $Hedef.ToString('dd/MM/yyyy', [System.Globalization.CultureInfo]::InvariantCulture)
 $basic = $Hedef.ToString('yyyyMMdd')
 Write-Output "Hedef tarih: $ddMMyyyy"
 
