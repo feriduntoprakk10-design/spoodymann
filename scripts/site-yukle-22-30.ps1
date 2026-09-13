@@ -78,14 +78,15 @@ function BildirimGoster([string]$baslik, [string]$mesaj) {
 # ---------- 1. Hedef tarihi belirle ----------
 $HedefIso = ''
 $sehirler = New-Object System.Collections.Generic.HashSet[string]
+$tarihler = New-Object System.Collections.Generic.List[string]
+$sehirTarih = New-Object System.Collections.Generic.List[string]
 if ($Tarih -ne '') {
     $d = [datetime]::ParseExact($Tarih, 'dd/MM/yyyy', $null)
     $HedefIso = $d.ToString('yyyy-MM-dd')
 }
-if ($HedefIso -eq '' -or $sehirTarih.Count -eq 0) {
-    $tarihler = New-Object System.Collections.Generic.List[string]
-    $sehirTarih = New-Object System.Collections.Generic.List[string]
-    if (Test-Path $SrcBeyer) {
+# Kaynaklari HER ZAMAN tara (hem otomatik tarih tespiti hem de -Tarih ile verilen
+# gunun sehir listesi icin gerekli).
+if (Test-Path $SrcBeyer) {
         foreach ($f in Get-ChildItem $SrcBeyer -Filter '*.html') {
             $m = [regex]::Match($f.Name, '^program_beyer_(.+)_(\d{8})(_normal)?\.html$')
             if ($m.Success) { $tarihler.Add($m.Groups[2].Value); $sehirTarih.Add($m.Groups[2].Value + '|' + $m.Groups[1].Value.ToLower()) | Out-Null }
@@ -114,7 +115,6 @@ if ($HedefIso -eq '' -or $sehirTarih.Count -eq 0) {
         $enYeni = ($tarihler | Sort-Object -Descending | Select-Object -First 1)
         $HedefIso = $enYeni.Substring(0,4) + '-' + $enYeni.Substring(4,2) + '-' + $enYeni.Substring(6,2)
     }
-}
 $Hedef = [datetime]::ParseExact($HedefIso, 'yyyy-MM-dd', $null)
 $gun = $Hedef.Day.ToString()
 $ayNo = $Hedef.ToString('MM')
