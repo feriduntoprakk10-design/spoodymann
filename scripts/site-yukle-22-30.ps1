@@ -1,19 +1,59 @@
 ﻿param(
     [string]$Tarih = "",
-    [switch]$WhatIf
+    [switch]$WhatIf,
+    [string[]]$SkipTur = @()
 )
 
-# 22:30 site yukleme otomasyonu:
+# 22:30 site yukleme otomasyonu (ZINCIRLI MOD - 15.09.2026'dan itibaren):
+# - 22:00 gorevleri bitmeden BASLAMAZ. Script 22:05'te tetiklenir, once
+#   5 onde-gorevin bitmesini bekler, hepsi bitince "bittigi gibi" yuklemeye gecer.
+# - Onde-gorevler: TJK Gunluk Beyer Sonuc ve Program, KilitYarisDailyReport,
+#   TJKGunlukRapor_2200, GidisatOtomasyonGunluk2200, SpoodymanDailyEval.
+# - Bekleme suresince kaynak klasorler hazir degilse eksiksizlik kilidi
+#   (adim 3b) yine calisir ve siteye hicbir sey yazilmaz.
 # - Masaustundeki kaynak klasorlerden hedef gunun raporlarini bulur
 # - rapor/ klasorune kopyalar (gtag + Beyer temizligi uygular)
 # - raporlar.html ve index.html kartlarini + sitemap.xml'i gunceller
 # - Onceki gunun rapor dosya/kart/URL'lerini siler
-# Kullanim: powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\site-yukle-22-30.ps1 [-Tarih 10/09/2026] [-WhatIf]
+# Kullanim: powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\site-yukle-22-30.ps1 [-Tarih 10/09/2026] [-WhatIf] [-SkipTur istatistik]
+#   -SkipTur: bu seferlik atlanacak tur(ler). Or: -SkipTur istatistik / -SkipTur @('istatistik','tempo')
+#   Gecerli degerler: beyer, kilit, tempo, istatistik (istat), sinif (sinif-dusme). Varsayilan: bos (5 tur zorunlu).
 
 $ErrorActionPreference = 'Stop'
 $RepoRoot = Split-Path $PSScriptRoot -Parent
 $RaporDir = Join-Path $RepoRoot 'rapor'
 $NoBom = New-Object Text.UTF8Encoding($false)
+
+# ---------- 0. Zincirleme: 22:00 gorevleri bitmeden baslama ----------
+$OndeGorevler = @(
+    '\TJK Gunluk Beyer Sonuc ve Program',
+    '\KilitYarisDailyReport',
+    '\TJKGunlukRapor_2200',
+    '\GidisatOtomasyonGunluk2200',
+    '\SpoodymanDailyEval'
+)
+$BeklemeSureSn = 120 * 60   # en fazla 2 saat bekle (22:05 -> 00:05)
+$KontrolAralikSn = 60
+$baslangic = Get-Date
+while ($true) {
+    $calisan = @()
+    foreach ($g in $OndeGorevler) {
+        try {
+            $bilgi = schtasks /Query /TN $g /V /FO LIST 2>&1 | Out-String
+            if ($bilgi -match 'Status:\s*Running') { $calisan += $g }
+        } catch { $calisan += "$g (sorgulanamadi)" }
+    }
+    if ($calisan.Count -eq 0) {
+        Write-Output "Onde-gorevler bitti, yuklemeye geciliyor. (bekleme: $([int]((Get-Date) - $baslangic).TotalMinutes) dk)"
+        break
+    }
+    if (((Get-Date) - $baslangic).TotalSeconds -ge $BeklemeSureSn) {
+        Write-Output "UYARI: zaman asimi (2 saat) - hala calisan: $($calisan -join ', '). Eksiksizlik kilidi eksikleri yakalayacak."
+        break
+    }
+    Write-Output "Bekleniyor... calisan onde-gorev: $($calisan -join ', ') ($(Get-Date -Format 'HH:mm:ss'))"
+    Start-Sleep -Seconds $KontrolAralikSn
+}
 
 $SrcKilit  = 'C:\Users\Monster\OneDrive\Desktop\kilit yarış arşivi'
 $SrcBeyer  = 'C:\Users\Monster\OneDrive\Desktop\beyer raporu'
@@ -231,9 +271,20 @@ foreach ($sehir in $sira) {
 }
 
 # ---------- 3b. Eksiksizlik kilidi: her sehirde 5 tur tam olmali, yoksa HICBIR SEY yazilmaz ----------
+# -SkipTur ile atlanan turler kilitten muaf (bu seferlik istisna icin).
+$skipNorm = @()
+foreach ($s in $SkipTur) {
+    $sl = ($s.ToString()).ToLowerInvariant().Trim()
+    if ($sl -like 'istat*') { $skipNorm += 'istat' }
+    elseif ($sl -like 'sinif*') { $skipNorm += 'sinif' }
+    elseif ($sl -eq 'kilit-yaris' -or $sl -eq 'kilit') { $skipNorm += 'kilit' }
+    elseif ($sl -ne '') { $skipNorm += $sl }
+}
+if ($skipNorm.Count -gt 0) { Write-Output "BILGI: SkipTur aktif - atlanan: $($skipNorm -join ', ')" }
 $eksikler = New-Object System.Collections.Generic.List[string]
 foreach ($k in $kartVerisi) {
     foreach ($tur in @('beyer','kilit','tempo','istat','sinif')) {
+        if ($skipNorm -contains $tur) { continue }
         if (-not $k.Rapor.ContainsKey($tur)) { $eksikler.Add("$($k.Goster)/$tur") | Out-Null }
     }
 }

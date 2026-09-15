@@ -9,7 +9,8 @@
 #>
 param(
     [string]$Tarih = "",
-    [switch]$WhatIf
+    [switch]$WhatIf,
+    [string[]]$SkipTur = @()
 )
 
 $ErrorActionPreference = 'Stop'
@@ -25,5 +26,6 @@ Write-Output "22:00 tetiklendi, hedef tarih: $Tarih"
 $yukle = Join-Path $RepoRoot 'scripts\site-yukle-22-30.ps1'
 $splat = @{ Tarih = $Tarih }
 if ($WhatIf) { $splat['WhatIf'] = $true }
+if ($SkipTur.Count -gt 0) { $splat['SkipTur'] = $SkipTur }
 & $yukle @splat
 exit $LASTEXITCODE
