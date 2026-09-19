@@ -429,5 +429,33 @@ $mesajIcerik = "Tarih: $(Get-Date -Format 'dd.MM.yyyy HH:mm')`r`nOnerilen commit
 if (-not $WhatIf) {
     [System.IO.File]::WriteAllText($mesajDosya, $mesajIcerik, $NoBom)
     Write-Output "Commit mesaji dosyaya yazildi: $mesajDosya"
+    # ---------- 8b. Otomatik commit + push (19.09.2026) ----------
+    try {
+        $GitExe = (Get-Command git.exe -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source -First 1)
+        if (-not $GitExe) {
+            $aday = @(
+                "$env:LOCALAPPDATA\GitHubDesktop\app-3.6.5\resources\app\git\cmd\git.exe",
+                'C:\Program Files\Git\cmd\git.exe'
+            ) + ((Get-ChildItem "$env:LOCALAPPDATA\GitHubDesktop" -Recurse -Filter 'git.exe' -ErrorAction SilentlyContinue | Select-Object -ExpandProperty FullName -First 1))
+            foreach ($a in $aday) { if ($a -and (Test-Path $a)) { $GitExe = $a; break } }
+        }
+        if (-not $GitExe) { throw 'git.exe bulunamadi.' }
+        & $GitExe -C $RepoRoot add -A
+        if ($LASTEXITCODE -ne 0) { throw "git add basarisiz (kod $LASTEXITCODE)." }
+        $degisen = & $GitExe -C $RepoRoot status --porcelain
+        if ([string]::IsNullOrWhiteSpace($degisen)) {
+            Write-Output 'BILGI: degisiklik yok - commit atlaniyor.'
+        } else {
+            & $GitExe -C $RepoRoot commit -m $commitTam
+            if ($LASTEXITCODE -ne 0) { throw "git commit basarisiz (kod $LASTEXITCODE)." }
+            Write-Output "OK git commit: $commitTam"
+            & $GitExe -C $RepoRoot push origin main
+            if ($LASTEXITCODE -ne 0) { throw "git push basarisiz (kod $LASTEXITCODE). GitHub Desktop'tan Push origin yapin." }
+            Write-Output 'OK git push: origin main'
+        }
+    } catch {
+        Write-Output "UYARI: otomatik commit/push yapilamadi ($($_.Exception.Message))"
+        BildirimGoster 'Spoodyman yukleme bitti (push YAPILAMADI)' $commitTam
+    }
     BildirimGoster 'Spoodyman 22:30 yukleme bitti' $commitTam
 }
