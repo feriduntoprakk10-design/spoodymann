@@ -103,4 +103,8 @@ Yeni günün raporları (kaynak dosyalar) masaüstündeki şu klasörlerde hazı
 - Kullanıcıya raporları commit/push için adım adım talimat ver (GitHub Desktop: Commit to main → Push origin).
 - TJK sitesi otomatik isteklerde bazen 403 verir; script browser User-Agent kullanır. 403 olursa kullanıcıdan saat bilgisini iste.
 - `rapor/` içindeki rehber dosyaları (`hiz-figur-rehberi`, `kilit-yaris-rehberi`, `istatistik-galop-rehberi`, `tempo-analizi-rehberi`) günlük temizlikte SİLİNMEZ.
-- `gidişhat analizi` klasöründeki `*_gidisat_raporu.html` / `gidisat_tempo_stil_raporu.html` dosyaları site kategorisi olmadığı için yüklenmez; sadece `*_sinif_dusme_analizi.html` kullanılır.
+- `gidişhat analizi` klasöründeki `*_sinif_dusme_analizi.html` dosyaları yüklenir.
+  `*_gidisat_raporu.html` 26.09.2026 kararıyla ARTIK ÜRETİLMEZ
+  (`daily_gidisat_otomasyon.py` içinde kapalı; `--gidishat` ile açılır).
+  `gidisat_tempo_stil_raporu.html` de 26.09.2026 kararıyla ARTIK ÜRETİLMEZ
+  (aynı `--gidishat` bayrağına bağlı).
