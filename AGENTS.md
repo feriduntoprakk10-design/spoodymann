@@ -3,7 +3,7 @@
 Bu repo, Spoodyman at yarışı raporları sitesidir (`raporlar.html` liste sayfası, raporlar `rapor/` klasöründe).
 
 **ÖNEMLİ:** Çalışılacak asıl repo klasörü: `C:\Users\Monster\OneDrive\Belgeler\GitHub\spoodyman`
-(Düzenlemeler buraya yapılır; kullanıcı GitHub Desktop ile commit/push eder.)
+(Düzenlemeler buraya yapılır; commit+push OTOMATİKTİR — `scripts/site-yukle-22-30.ps1` 8b adımı yapar. Düşerse kullanıcı GitHub Desktop ile basar.)
 
 ## Günlük rapor ekleme iş akışı (HER GÜN otomatik uygula)
 
@@ -95,12 +95,16 @@ Yeni günün raporları (kaynak dosyalar) masaüstündeki şu klasörlerde hazı
    ```
    Bu komut özetinde "Adana sentetik par time güncelleme" satırı görünür.
 
-10. **Commit/push talimatı:** Kullanıcıya kısa commit mesajı ver, örn:
+10. **Commit/push (OTOMATİK, 19.09.2026'dan beri):** `scripts/site-yukle-22-30.ps1` 8b adımı
+   `git add -A` + commit + `push origin main` yapar. Commit mesajı formatı, örn:
    `02.09.2026 raporlari eklendi, 01.09 raporlari silindi`
-   (GitHub Desktop: Commit to main → Push origin)
+   Otomatik push DÜŞERSE kullanıcıya kısa commit mesajı ver
+   (GitHub Desktop: Commit to main → Push origin).
 
 ## Diğer kurallar
-- Kullanıcıya raporları commit/push için adım adım talimat ver (GitHub Desktop: Commit to main → Push origin).
+- Commit+push otomatiktir (asistan/script yapar). SADECE otomatik push düşerse
+  kullanıcıya raporları commit/push için adım adım talimat ver
+  (GitHub Desktop: Commit to main → Push origin).
 - TJK sitesi otomatik isteklerde bazen 403 verir; script browser User-Agent kullanır. 403 olursa kullanıcıdan saat bilgisini iste.
 - `rapor/` içindeki rehber dosyaları (`hiz-figur-rehberi`, `kilit-yaris-rehberi`, `istatistik-galop-rehberi`, `tempo-analizi-rehberi`) günlük temizlikte SİLİNMEZ.
 - `gidişhat analizi` klasöründeki `*_sinif_dusme_analizi.html` dosyaları yüklenir.
