@@ -6,9 +6,11 @@
 
 # 22:30 site yukleme otomasyonu (ZINCIRLI MOD - 15.09.2026'dan itibaren):
 # - 22:00 gorevleri bitmeden BASLAMAZ. Script 22:05'te tetiklenir, once
-#   5 onde-gorevin bitmesini bekler, hepsi bitince "bittigi gibi" yuklemeye gecer.
+#   4 onde-gorevin bitmesini bekler, hepsi bitince "bittigi gibi" yuklemeye gecer.
 # - Onde-gorevler: TJK Gunluk Beyer Sonuc ve Program, KilitYarisDailyReport,
-#   TJKGunlukRapor_2200, GidisatOtomasyonGunluk2200, SpoodymanDailyEval.
+#   TJKGunlukRapor_2200, GidisatOtomasyonGunluk2200.
+#   (SpoodymanDailyEval 28.09.2026'da SILINDI: olmayan daily_eval.ps1'e bakiyordu;
+#   degerlendirme raporlarini daily_results_beyer.py zaten uretiyor.)
 # - Bekleme suresince kaynak klasorler hazir degilse eksiksizlik kilidi
 #   (adim 3b) yine calisir ve siteye hicbir sey yazilmaz.
 # - Masaustundeki kaynak klasorlerden hedef gunun raporlarini bulur
@@ -29,8 +31,7 @@ $OndeGorevler = @(
     '\TJK Gunluk Beyer Sonuc ve Program',
     '\KilitYarisDailyReport',
     '\TJKGunlukRapor_2200',
-    '\GidisatOtomasyonGunluk2200',
-    '\SpoodymanDailyEval'
+    '\GidisatOtomasyonGunluk2200'
 )
 $BeklemeSureSn = 120 * 60   # en fazla 2 saat bekle (22:05 -> 00:05)
 $KontrolAralikSn = 60
