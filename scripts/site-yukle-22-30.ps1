@@ -11,8 +11,9 @@
 #   TJKGunlukRapor_2200, GidisatOtomasyonGunluk2200.
 #   (SpoodymanDailyEval 28.09.2026'da SILINDI: olmayan daily_eval.ps1'e bakiyordu;
 #   degerlendirme raporlarini daily_results_beyer.py zaten uretiyor.)
-# - Bekleme suresince kaynak klasorler hazir degilse eksiksizlik kilidi
-#   (adim 3b) yine calisir ve siteye hicbir sey yazilmaz.
+# - Bekleme suresince kaynak klasorler hazir degilse adim 3b'deki eksiklik
+#   politikasi calisir: eksikler loglanir + bildirim gosterilir, mevcut
+#   raporlar yine de siteye yuklenir (30.09.2026 karari).
 # - Masaustundeki kaynak klasorlerden hedef gunun raporlarini bulur
 # - rapor/ klasorune kopyalar (gtag + Beyer temizligi uygular)
 # - raporlar.html ve index.html kartlarini + sitemap.xml'i gunceller
@@ -271,8 +272,10 @@ foreach ($sehir in $sira) {
     $kartVerisi += [pscustomobject]@{ Sehir = $sehir; Goster = $g; Taban = $taban; Rapor = $bulundu }
 }
 
-# ---------- 3b. Eksiksizlik kilidi: her sehirde 5 tur tam olmali, yoksa HICBIR SEY yazilmaz ----------
-# -SkipTur ile atlanan turler kilitten muaf (bu seferlik istisna icin).
+# ---------- 3b. Eksiklik politikasi (30.09.2026 karari): eksik tur yuklemeye ENGEL DEGIL ----------
+# Eksikler loglanir + bildirim gosterilir, mevcut raporlar siteye yuklenir, eksik olan sonra tamamlanir.
+# -SkipTur parametresi geriye uyumluluk icin duruyor (artik kilit icin gerekli degil).
+# Tek durma sarti: HIC rapor bulunamadiysa (yuklenecek bir sey yoksa) eski site korunur.
 $skipNorm = @()
 foreach ($s in $SkipTur) {
     $sl = ($s.ToString()).ToLowerInvariant().Trim()
@@ -290,9 +293,13 @@ foreach ($k in $kartVerisi) {
     }
 }
 if ($eksikler.Count -gt 0) {
-    Write-Output "DURDU: hedef tarih $ddMMyyyy icin eksik kaynaklar var: $($eksikler -join ', ')"
-    Write-Output 'Siteye hicbir sey yazilmadi (eski raporlar korundu).'
-    if (-not $WhatIf) { BildirimGoster 'Spoodyman yukleme DURDU' "Eksik kaynak ($($eksikler.Count)): $ddMMyyyy" }
+    Write-Output "EKSIKLERE RAGMEN DEVAM: hedef tarih $ddMMyyyy icin eksik kaynaklar: $($eksikler -join ', ')"
+    Write-Output 'Mevcut raporlar yuklenecek, eksikler sonra tamamlanacak.'
+    if (-not $WhatIf) { BildirimGoster 'Spoodyman yukleme (eksik var)' "Eksik ($($eksikler.Count)): $ddMMyyyy" }
+}
+if ($isList.Count -eq 0) {
+    Write-Output "DURDU: hedef tarih $ddMMyyyy icin HIC rapor bulunamadi - siteye hicbir sey yazilmadi (eski raporlar korundu)."
+    if (-not $WhatIf) { BildirimGoster 'Spoodyman yukleme DURDU' "Hic rapor yok: $ddMMyyyy" }
     exit 2
 }
 foreach ($is in $isList) {
