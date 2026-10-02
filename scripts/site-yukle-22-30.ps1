@@ -59,7 +59,8 @@ while ($true) {
 
 $SrcKilit  = 'C:\Users\Monster\OneDrive\Desktop\kilit yarış arşivi'
 $SrcBeyer  = 'C:\Users\Monster\OneDrive\Desktop\beyer raporu'
-$SrcIstat  = 'C:\Users\Monster\OneDrive\Desktop\istatistik'
+$SrcIstat  = 'C:\Users\Monster\OneDrive\Desktop\istatistik ve galop'
+if (-not (Test-Path $SrcIstat)) { $SrcIstat = 'C:\Users\Monster\OneDrive\Desktop\istatistik' }
 $SrcSinif  = 'C:\Users\Monster\OneDrive\Desktop\gidişhat analizi'
 $SrcTempo  = 'C:\Users\Monster\OneDrive\Desktop\frontrunner'
 $SrcDeger  = 'C:\Users\Monster\OneDrive\Desktop\günlük sonuç değerlendirme raporu'
