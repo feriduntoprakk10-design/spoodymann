@@ -10,7 +10,7 @@ Bu repo, Spoodyman at yarışı raporları sitesidir (`raporlar.html` liste sayf
 Yeni günün raporları (kaynak dosyalar) masaüstündeki şu klasörlerde hazır gelir:
 - `C:\Users\Monster\OneDrive\Desktop\kilit yarış arşivi\` → kilit yarış
 - `C:\Users\Monster\OneDrive\Desktop\beyer raporu\` → hız figürü (beyer)
-- `C:\Users\Monster\OneDrive\Desktop\istatistik\` → istatistik ve galop
+- `C:\Users\Monster\OneDrive\Desktop\istatistik ve galop\` → istatistik ve galop
 - `C:\Users\Monster\OneDrive\Desktop\gidişhat analizi\` → **sınıf düşme/yükselme** (`*_sinif_dusme_analizi.html`)
 - `C:\Users\Monster\OneDrive\Desktop\frontrunner\` → tempo analizi (`2026-09-02_onde_giden_*.html`)
 
