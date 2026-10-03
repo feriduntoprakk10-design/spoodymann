@@ -218,6 +218,8 @@ function KopyalaRapor([string]$kaynak, [string]$hedefAd, [switch]$BeyerTemizle) 
             }
         }
         $t = $parcalar -join ''
+        # 03.10.2026: "Son yaris ayni pist/mesafe" kutulari kaldirildi (HER ZAMAN UYGULA)
+        $t = [regex]::Replace($t, '\s*<div class="match-notes">.*?</div>\s*</div>', '', [System.Text.RegularExpressions.RegexOptions]::Singleline)
     }
     YazDosya $hedef $t
     return $hedef

@@ -40,6 +40,10 @@ Yeni günün raporları (kaynak dosyalar) masaüstündeki şu klasörlerde hazı
    - `Beyer\s+(\d+)` → `$1`
    - ` Beyer ` → ` ` (boşluklu)
    - NOT: `mesafe-fark-note` blokları (`class="mesafe-fark-note"`) ve başlıklardaki mesafe bilgisi (örn. `İSTANBUL 1. Koşu 1300m - Sentetik`) ASLA silinmez.
+   - **03.10.2026 kararı (HER ZAMAN UYGULA):** `match-notes` blokları
+     (`<div class="match-notes">` → "Son yarış aynı pist/mesafe ...") SİLİNİR.
+     Beyer üreteci (`report_program.py` → `_race_match_notes`) bunu üretmez;
+     `site-yukle-22-30.ps1` (`KopyalaRapor -BeyerTemizle`) yine de süpürür.
 
 5. **`raporlar.html` VE `index.html`'e kart ekle** (her rapor için 1 kart):
    - `div.cards-grid` içine, aynı gün içinde önce en erken ilk yarışlı şehir, sonra diğerleri.
