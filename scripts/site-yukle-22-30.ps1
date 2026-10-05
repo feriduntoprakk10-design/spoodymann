@@ -410,7 +410,7 @@ foreach ($sayfa in @((Join-Path $RepoRoot 'raporlar.html'), (Join-Path $RepoRoot
 # ---------- 7. Sitemap ----------
 $sitemapYol = Join-Path $RepoRoot 'sitemap.xml'
 $sm = OkuDosya $sitemapYol
-$tabanUrl = 'https://feriduntoprakk10-design.github.io/spoodymann'
+$tabanUrl = 'https://spoodymann.github.io/spoodymann'
 $m0 = [regex]::Match($sm, '(https://[^<"]+/spoodymann)/rapor/')
 if ($m0.Success) { $tabanUrl = $m0.Groups[1].Value }
 $sm = [regex]::Replace($sm, '(?s)<url>\s*<loc>[^<]*?/rapor/[a-z_]+-\d{1,2}-(?:' + ($AyTers.Keys -join '|') + ')(?:-[a-z-]+)?\.html</loc>\s*</url>\s*', '')
