@@ -48,13 +48,23 @@ th { text-align: left; font-weight: 700; border-bottom: 1px solid #d8d8d8; paddi
 td { vertical-align: top; border-bottom: 1px solid #eeeeee; padding: 7px 4px; line-height: 1.45; }
 td:nth-child(1), th:nth-child(1) { padding-right: 2px; }
 td:nth-child(2), th:nth-child(2) { text-align: left; white-space: nowrap; padding-left: 2px; padding-right: 4px; }
-td:nth-child(3) { width: 55%; }
+td:nth-child(3) { width: 50%; }
 td:nth-child(3) strong {
   display: inline-block;
   min-width: 46px;
   margin-right: 6px;
   color: #000;
   font-weight: 900;
+}
+td:nth-child(4), th:nth-child(4) { text-align: right; white-space: nowrap; width: 52px; }
+td.fig-cell { text-align: right; vertical-align: top; }
+.fig {
+  display: inline-block;
+  min-width: 44px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-weight: 900;
+  color: #000;
 }
 
 .gap { height: 6px; }
@@ -102,20 +112,20 @@ strong { font-weight: 700; }
 <p>İkramiye karşılaştırması: Referans birincilik 600.000 TL / Bugünkü birincilik 600.000 TL</p>
 <p>Sınıf durumu: sınıf aynı</p>
 <table>
-<thead><tr><th>At</th><th>Ref. sıra</th><th>Dereceler</th></tr></thead>
+<thead><tr><th>At</th><th>Ref. sıra</th><th>Dereceler</th><th>Hız</th></tr></thead>
 <tbody>
-<tr><td>ENDER ŞOVALYE</td><td>1 oldu</td><td><strong class="black-hit">4 oldu</strong> <strong class="black-hit">Sabit Ganyan: 8</strong> 25.08.2026 Ankara 2. Koşu — Handikap 14/DHÖW /H2 / KUM / 1200m / Birincilik ikramiyesi: 470.000 TL</td></tr>
-<tr><td>KOEMAN</td><td>2 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 1,5</strong> 27.08.2026 Kocaeli 9. Koşu — Maiden/DHÖW / KUM / 1200m / Birincilik ikramiyesi: 545.000 TL</td></tr>
-<tr><td>KING ULUDAĞ</td><td>3 oldu</td><td><strong class="black-hit">2 oldu</strong> <strong class="black-hit">Sabit Ganyan: 2,4</strong> 25.08.2026 Ankara 1. Koşu — Maiden/DHÖW / CIM / 1200m / Birincilik ikramiyesi: 600.000 TL</td></tr>
-<tr><td>MELİHCİM</td><td>5 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 6</strong> 25.08.2026 Ankara 9. Koşu — Maiden/DHÖW / CIM / 1200m / Birincilik ikramiyesi: 600.000 TL</td></tr>
-<tr><td>DENİZAĞA</td><td>6 oldu</td><td><strong class="black-hit">10 oldu</strong> <strong class="black-hit">Sabit Ganyan: 20</strong> 25.08.2026 Ankara 9. Koşu — Maiden/DHÖW / CIM / 1200m / Birincilik ikramiyesi: 600.000 TL</td></tr>
-<tr><td>KIZILKULE</td><td>7 oldu</td><td><strong class="black-hit">3 oldu</strong> <strong class="black-hit">Sabit Ganyan: 6</strong> 20.08.2026 Kocaeli 2. Koşu — Maiden/DHÖW/Dişi / KUM / 1400m / Birincilik ikramiyesi: 545.000 TL</td></tr>
-<tr><td>ATAERİ</td><td>8 oldu</td><td><strong class="black-hit">2 oldu</strong> <strong class="black-hit">Sabit Ganyan: 30</strong> 29.08.2026 Ankara 1. Koşu — Maiden/DHÖ / KUM / 1500m / Birincilik ikramiyesi: 600.000 TL</td></tr>
-<tr><td>KOPTU FIRTINA</td><td>9 oldu</td><td><strong class="black-hit">15 oldu</strong> <strong class="black-hit">Sabit Ganyan: 30</strong> 25.08.2026 Ankara 5. Koşu — Maiden/DHÖW / CIM / 1200m / Birincilik ikramiyesi: 600.000 TL</td></tr>
-<tr><td>KIZIL ARYA</td><td>10 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 30</strong> 29.08.2026 Ankara 4. Koşu — Maiden/DHÖ / KUM / 1500m / Birincilik ikramiyesi: 600.000 TL</td></tr>
-<tr><td>GÜZEL ELAM</td><td>12 oldu</td><td><strong class="black-hit">4 oldu</strong> <strong class="black-hit">Sabit Ganyan: 25</strong> 25.08.2026 Ankara 9. Koşu — Maiden/DHÖW / CIM / 1200m / Birincilik ikramiyesi: 600.000 TL</td></tr>
-<tr><td>MERCAN ANA</td><td>13 oldu</td><td><strong class="black-hit">13 oldu</strong> <strong class="black-hit">Sabit Ganyan: 100</strong> 08.09.2026 Ankara 9. Koşu — Maiden/DHÖ / CIM / 1400m / Birincilik ikramiyesi: 600.000 TL</td></tr>
-<tr><td>MUŞUN GÜLÜ</td><td>14 oldu</td><td><strong class="black-hit">12 oldu</strong> <strong class="black-hit">Sabit Ganyan: 100</strong> 25.08.2026 Ankara 9. Koşu — Maiden/DHÖW / CIM / 1200m / Birincilik ikramiyesi: 600.000 TL</td></tr>
+<tr><td>ENDER ŞOVALYE</td><td>1 oldu</td><td><strong class="black-hit">4 oldu</strong> <strong class="black-hit">Sabit Ganyan: 8</strong> 25.08.2026 Ankara 2. Koşu — Handikap 14/DHÖW /H2 / KUM / 1200m / Birincilik ikramiyesi: 470.000 TL</td><td class="fig-cell"><span class="fig">79</span></td></tr>
+<tr><td>KOEMAN</td><td>2 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 1,5</strong> 27.08.2026 Kocaeli 9. Koşu — Maiden/DHÖW / KUM / 1200m / Birincilik ikramiyesi: 545.000 TL</td><td class="fig-cell"><span class="fig">64</span></td></tr>
+<tr><td>KING ULUDAĞ</td><td>3 oldu</td><td><strong class="black-hit">2 oldu</strong> <strong class="black-hit">Sabit Ganyan: 2,4</strong> 25.08.2026 Ankara 1. Koşu — Maiden/DHÖW / CIM / 1200m / Birincilik ikramiyesi: 600.000 TL</td><td class="fig-cell"><span class="fig">79</span></td></tr>
+<tr><td>MELİHCİM</td><td>5 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 6</strong> 25.08.2026 Ankara 9. Koşu — Maiden/DHÖW / CIM / 1200m / Birincilik ikramiyesi: 600.000 TL</td><td class="fig-cell"><span class="fig">78</span></td></tr>
+<tr><td>DENİZAĞA</td><td>6 oldu</td><td><strong class="black-hit">10 oldu</strong> <strong class="black-hit">Sabit Ganyan: 20</strong> 25.08.2026 Ankara 9. Koşu — Maiden/DHÖW / CIM / 1200m / Birincilik ikramiyesi: 600.000 TL</td><td class="fig-cell"><span class="fig">63</span></td></tr>
+<tr><td>KIZILKULE</td><td>7 oldu</td><td><strong class="black-hit">3 oldu</strong> <strong class="black-hit">Sabit Ganyan: 6</strong> 20.08.2026 Kocaeli 2. Koşu — Maiden/DHÖW/Dişi / KUM / 1400m / Birincilik ikramiyesi: 545.000 TL</td><td class="fig-cell"><span class="fig">48</span></td></tr>
+<tr><td>ATAERİ</td><td>8 oldu</td><td><strong class="black-hit">2 oldu</strong> <strong class="black-hit">Sabit Ganyan: 30</strong> 29.08.2026 Ankara 1. Koşu — Maiden/DHÖ / KUM / 1500m / Birincilik ikramiyesi: 600.000 TL</td><td class="fig-cell"><span class="fig">64</span></td></tr>
+<tr><td>KOPTU FIRTINA</td><td>9 oldu</td><td><strong class="black-hit">15 oldu</strong> <strong class="black-hit">Sabit Ganyan: 30</strong> 25.08.2026 Ankara 5. Koşu — Maiden/DHÖW / CIM / 1200m / Birincilik ikramiyesi: 600.000 TL</td><td class="fig-cell"><span class="fig">34</span></td></tr>
+<tr><td>KIZIL ARYA</td><td>10 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 30</strong> 29.08.2026 Ankara 4. Koşu — Maiden/DHÖ / KUM / 1500m / Birincilik ikramiyesi: 600.000 TL</td><td class="fig-cell"><span class="fig">69</span></td></tr>
+<tr><td>GÜZEL ELAM</td><td>12 oldu</td><td><strong class="black-hit">4 oldu</strong> <strong class="black-hit">Sabit Ganyan: 25</strong> 25.08.2026 Ankara 9. Koşu — Maiden/DHÖW / CIM / 1200m / Birincilik ikramiyesi: 600.000 TL</td><td class="fig-cell"><span class="fig">73</span></td></tr>
+<tr><td>MERCAN ANA</td><td>13 oldu</td><td><strong class="black-hit">13 oldu</strong> <strong class="black-hit">Sabit Ganyan: 100</strong> 08.09.2026 Ankara 9. Koşu — Maiden/DHÖ / CIM / 1400m / Birincilik ikramiyesi: 600.000 TL</td><td class="fig-cell"><span class="fig">2</span></td></tr>
+<tr><td>MUŞUN GÜLÜ</td><td>14 oldu</td><td><strong class="black-hit">12 oldu</strong> <strong class="black-hit">Sabit Ganyan: 100</strong> 25.08.2026 Ankara 9. Koşu — Maiden/DHÖW / CIM / 1200m / Birincilik ikramiyesi: 600.000 TL</td><td class="fig-cell"><span class="fig">58</span></td></tr>
 </tbody>
 </table>
 <div class="gap"></div>
@@ -138,15 +148,15 @@ strong { font-weight: 700; }
 <p>İkramiye karşılaştırması: Referans birincilik 835.000 TL / Bugünkü birincilik 630.000 TL</p>
 <p>Sınıf durumu: sınıf düşüyor</p>
 <table>
-<thead><tr><th>At</th><th>Ref. sıra</th><th>Dereceler</th></tr></thead>
+<thead><tr><th>At</th><th>Ref. sıra</th><th>Dereceler</th><th>Hız</th></tr></thead>
 <tbody>
-<tr><td>GRAY DREAM</td><td>1 oldu</td><td><strong class="black-hit">2 oldu</strong> <strong class="black-hit">Sabit Ganyan: 1,35</strong> 01.10.2026 Ankara 3. Koşu — KV-7/Dişi / CIM / 1900m / Birincilik ikramiyesi: 975.000 TL</td></tr>
-<tr><td>MELIAN THE MAIA</td><td>2 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 2,4</strong> 22.09.2026 Ankara 3. Koşu — SATIŞ 3 / CIM / 1900m / Birincilik ikramiyesi: 630.000 TL</td></tr>
-<tr><td>MAHALL</td><td>3 oldu</td><td><strong class="black-hit">5 oldu</strong> <strong class="black-hit">Sabit Ganyan: 4,5</strong> 25.09.2026 Istanbul 6. Koşu — Kısa Vade Handikap 24/Dişi /H1 / SENTETIK / 1400m / Birincilik ikramiyesi: 1.130.000 TL</td></tr>
-<tr><td>LOVE SEA</td><td>4 oldu</td><td><strong class="black-hit">2 oldu</strong> <strong class="black-hit">Sabit Ganyan: 4,25</strong> 22.09.2026 Ankara 3. Koşu — SATIŞ 3 / CIM / 1900m / Birincilik ikramiyesi: 630.000 TL</td></tr>
-<tr><td>İPHİKLOS</td><td>6 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 2,5</strong> 25.09.2026 Istanbul 6. Koşu — Kısa Vade Handikap 24/Dişi /H1 / SENTETIK / 1400m / Birincilik ikramiyesi: 1.130.000 TL</td></tr>
-<tr><td>MAKUL</td><td>7 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 5,5</strong> 02.10.2026 Istanbul 3. Koşu — ŞARTLI 4/Dişi / SENTETIK / 1200m / Birincilik ikramiyesi: 595.000 TL</td></tr>
-<tr><td>SER VEYRON</td><td>8 oldu</td><td><strong class="black-hit">5 oldu</strong> <strong class="black-hit">Sabit Ganyan: 3,6</strong> 17.09.2026 Ankara 2. Koşu — ŞARTLI 5 / KUM / 2000m / Birincilik ikramiyesi: 730.000 TL</td></tr>
+<tr><td>GRAY DREAM</td><td>1 oldu</td><td><strong class="black-hit">2 oldu</strong> <strong class="black-hit">Sabit Ganyan: 1,35</strong> 01.10.2026 Ankara 3. Koşu — KV-7/Dişi / CIM / 1900m / Birincilik ikramiyesi: 975.000 TL</td><td class="fig-cell"><span class="fig">81</span></td></tr>
+<tr><td>MELIAN THE MAIA</td><td>2 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 2,4</strong> 22.09.2026 Ankara 3. Koşu — SATIŞ 3 / CIM / 1900m / Birincilik ikramiyesi: 630.000 TL</td><td class="fig-cell"><span class="fig">80</span></td></tr>
+<tr><td>MAHALL</td><td>3 oldu</td><td><strong class="black-hit">5 oldu</strong> <strong class="black-hit">Sabit Ganyan: 4,5</strong> 25.09.2026 Istanbul 6. Koşu — Kısa Vade Handikap 24/Dişi /H1 / SENTETIK / 1400m / Birincilik ikramiyesi: 1.130.000 TL</td><td class="fig-cell"><span class="fig">75</span></td></tr>
+<tr><td>LOVE SEA</td><td>4 oldu</td><td><strong class="black-hit">2 oldu</strong> <strong class="black-hit">Sabit Ganyan: 4,25</strong> 22.09.2026 Ankara 3. Koşu — SATIŞ 3 / CIM / 1900m / Birincilik ikramiyesi: 630.000 TL</td><td class="fig-cell"><span class="fig">80</span></td></tr>
+<tr><td>İPHİKLOS</td><td>6 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 2,5</strong> 25.09.2026 Istanbul 6. Koşu — Kısa Vade Handikap 24/Dişi /H1 / SENTETIK / 1400m / Birincilik ikramiyesi: 1.130.000 TL</td><td class="fig-cell"><span class="fig">83</span></td></tr>
+<tr><td>MAKUL</td><td>7 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 5,5</strong> 02.10.2026 Istanbul 3. Koşu — ŞARTLI 4/Dişi / SENTETIK / 1200m / Birincilik ikramiyesi: 595.000 TL</td><td class="fig-cell"><span class="fig">82</span></td></tr>
+<tr><td>SER VEYRON</td><td>8 oldu</td><td><strong class="black-hit">5 oldu</strong> <strong class="black-hit">Sabit Ganyan: 3,6</strong> 17.09.2026 Ankara 2. Koşu — ŞARTLI 5 / KUM / 2000m / Birincilik ikramiyesi: 730.000 TL</td><td class="fig-cell"><span class="fig">66</span></td></tr>
 </tbody>
 </table>
 <div class="gap"></div>
@@ -162,16 +172,16 @@ strong { font-weight: 700; }
 <p>İkramiye karşılaştırması: Referans birincilik 630.000 TL / Bugünkü birincilik 630.000 TL</p>
 <p>Sınıf durumu: sınıf aynı</p>
 <table>
-<thead><tr><th>At</th><th>Ref. sıra</th><th>Dereceler</th></tr></thead>
+<thead><tr><th>At</th><th>Ref. sıra</th><th>Dereceler</th><th>Hız</th></tr></thead>
 <tbody>
-<tr><td>LADY SEPHORA</td><td>3 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 1,5</strong> 31.05.2026 Adana 9. Koşu — ŞARTLI 4/Dişi / CIM / 1800m / Birincilik ikramiyesi: 490.000 TL</td></tr>
-<tr><td>GEL OGLİM</td><td>4 oldu</td><td><strong class="black-hit">2 oldu</strong> <strong class="black-hit">Sabit Ganyan: 2,6</strong> 24.05.2026 Adana 7. Koşu — ŞARTLI 4 / CIM / 1300m / Birincilik ikramiyesi: 490.000 TL</td></tr>
-<tr><td>FALCONGIRL</td><td>5 oldu</td><td><strong class="black-hit">8 oldu</strong> <strong class="black-hit">Sabit Ganyan: 16</strong> 26.06.2026 Ankara 2. Koşu — Handikap 16/Dişi /H1 / CIM / 2200m / Birincilik ikramiyesi: 730.000 TL</td></tr>
-<tr><td>BOUCHERON</td><td>6 oldu</td><td><strong class="black-hit">4 oldu</strong> <strong class="black-hit">Sabit Ganyan: 10</strong> 11.06.2026 Ankara 8. Koşu — Kısa Vade Handikap 24 /H1 / CIM / 2200m / Birincilik ikramiyesi: 1.130.000 TL</td></tr>
-<tr><td>PALURİ MAN</td><td>7 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 12</strong> 06.06.2026 Ankara 1. Koşu — Handikap 15 /H1 / CIM / 1900m / Birincilik ikramiyesi: 595.000 TL</td></tr>
-<tr><td>KABA RÜZGAR</td><td>8 oldu</td><td><strong class="black-hit">13 oldu</strong> <strong class="black-hit">Sabit Ganyan: 10</strong> 31.05.2026 Adana 9. Koşu — ŞARTLI 4/Dişi / CIM / 1800m / Birincilik ikramiyesi: 490.000 TL</td></tr>
-<tr><td>BON CHEVAL</td><td>9 oldu</td><td><strong class="black-hit">8 oldu</strong> <strong class="black-hit">Sabit Ganyan: 7,5</strong> 06.07.2026 Elazig 8. Koşu — Handikap 14 /H3 / KUM / 1600m / Birincilik ikramiyesi: 280.000 TL</td></tr>
-<tr><td>LEO MELO</td><td>10 oldu</td><td><strong class="black-hit">11 oldu</strong> <strong class="black-hit">Sabit Ganyan: 80</strong> 31.05.2026 Adana 9. Koşu — ŞARTLI 4/Dişi / CIM / 1800m / Birincilik ikramiyesi: 490.000 TL</td></tr>
+<tr><td>LADY SEPHORA</td><td>3 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 1,5</strong> 31.05.2026 Adana 9. Koşu — ŞARTLI 4/Dişi / CIM / 1800m / Birincilik ikramiyesi: 490.000 TL</td><td class="fig-cell"><span class="fig">82</span></td></tr>
+<tr><td>GEL OGLİM</td><td>4 oldu</td><td><strong class="black-hit">2 oldu</strong> <strong class="black-hit">Sabit Ganyan: 2,6</strong> 24.05.2026 Adana 7. Koşu — ŞARTLI 4 / CIM / 1300m / Birincilik ikramiyesi: 490.000 TL</td><td class="fig-cell"><span class="fig">82</span></td></tr>
+<tr><td>FALCONGIRL</td><td>5 oldu</td><td><strong class="black-hit">8 oldu</strong> <strong class="black-hit">Sabit Ganyan: 16</strong> 26.06.2026 Ankara 2. Koşu — Handikap 16/Dişi /H1 / CIM / 2200m / Birincilik ikramiyesi: 730.000 TL</td><td class="fig-cell"><span class="fig">60</span></td></tr>
+<tr><td>BOUCHERON</td><td>6 oldu</td><td><strong class="black-hit">4 oldu</strong> <strong class="black-hit">Sabit Ganyan: 10</strong> 11.06.2026 Ankara 8. Koşu — Kısa Vade Handikap 24 /H1 / CIM / 2200m / Birincilik ikramiyesi: 1.130.000 TL</td><td class="fig-cell"><span class="fig">80</span></td></tr>
+<tr><td>PALURİ MAN</td><td>7 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 12</strong> 06.06.2026 Ankara 1. Koşu — Handikap 15 /H1 / CIM / 1900m / Birincilik ikramiyesi: 595.000 TL</td><td class="fig-cell"><span class="fig">74</span></td></tr>
+<tr><td>KABA RÜZGAR</td><td>8 oldu</td><td><strong class="black-hit">13 oldu</strong> <strong class="black-hit">Sabit Ganyan: 10</strong> 31.05.2026 Adana 9. Koşu — ŞARTLI 4/Dişi / CIM / 1800m / Birincilik ikramiyesi: 490.000 TL</td><td class="fig-cell"><span class="fig">veri yok</span></td></tr>
+<tr><td>BON CHEVAL</td><td>9 oldu</td><td><strong class="black-hit">8 oldu</strong> <strong class="black-hit">Sabit Ganyan: 7,5</strong> 06.07.2026 Elazig 8. Koşu — Handikap 14 /H3 / KUM / 1600m / Birincilik ikramiyesi: 280.000 TL</td><td class="fig-cell"><span class="fig">26</span></td></tr>
+<tr><td>LEO MELO</td><td>10 oldu</td><td><strong class="black-hit">11 oldu</strong> <strong class="black-hit">Sabit Ganyan: 80</strong> 31.05.2026 Adana 9. Koşu — ŞARTLI 4/Dişi / CIM / 1800m / Birincilik ikramiyesi: 490.000 TL</td><td class="fig-cell"><span class="fig">64</span></td></tr>
 </tbody>
 </table>
 <div class="gap"></div>
@@ -194,14 +204,14 @@ strong { font-weight: 700; }
 <p>İkramiye karşılaştırması: Referans birincilik 730.000 TL / Bugünkü birincilik 595.000 TL</p>
 <p>Sınıf durumu: sınıf düşüyor</p>
 <table>
-<thead><tr><th>At</th><th>Ref. sıra</th><th>Dereceler</th></tr></thead>
+<thead><tr><th>At</th><th>Ref. sıra</th><th>Dereceler</th><th>Hız</th></tr></thead>
 <tbody>
-<tr><td>CALL TO ARMS</td><td>1 oldu</td><td><strong class="black-hit">8 oldu</strong> <strong class="black-hit">Sabit Ganyan: 5,5</strong> 05.09.2026 Istanbul 9. Koşu — Handikap 16 /H1 / CIM / 1400m / Birincilik ikramiyesi: 730.000 TL</td></tr>
-<tr><td>ŞAFAKATEŞ</td><td>2 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 1,6</strong> 30.08.2026 Adana 7. Koşu — Handikap 17 /H2 / SENTETIK / 2000m / Birincilik ikramiyesi: 680.000 TL</td></tr>
-<tr><td>KING FERİT</td><td>3 oldu</td><td><strong class="black-hit">7 oldu</strong> <strong class="black-hit">Sabit Ganyan: 14</strong> 28.08.2026 Bursa 8. Koşu — KV-6 / CIM / 1200m / Birincilik ikramiyesi: 695.000 TL</td></tr>
-<tr><td>MIZMIZ MYRTLE</td><td>5 oldu</td><td><strong class="black-hit">10 oldu</strong> <strong class="black-hit">Sabit Ganyan: 60</strong> 26.09.2026 Ankara 9. Koşu — ŞARTLI 4 / CIM / 1200m / Birincilik ikramiyesi: 595.000 TL</td></tr>
-<tr><td>ERULİNA</td><td>7 oldu</td><td><strong class="black-hit">8 oldu</strong> <strong class="black-hit">Sabit Ganyan: 25</strong> 23.08.2026 Istanbul 9. Koşu — Handikap 15 /H1/Y1 / SENTETIK / 1500m / Birincilik ikramiyesi: 595.000 TL</td></tr>
-<tr><td>HEAVEN LIGHT</td><td>8 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 4,5</strong> 25.08.2026 Kocaeli 8. Koşu — Handikap 14/Dişi /H2 / KUM / 1400m / Birincilik ikramiyesi: 400.000 TL</td></tr>
+<tr><td>CALL TO ARMS</td><td>1 oldu</td><td><strong class="black-hit">8 oldu</strong> <strong class="black-hit">Sabit Ganyan: 5,5</strong> 05.09.2026 Istanbul 9. Koşu — Handikap 16 /H1 / CIM / 1400m / Birincilik ikramiyesi: 730.000 TL</td><td class="fig-cell"><span class="fig">50</span></td></tr>
+<tr><td>ŞAFAKATEŞ</td><td>2 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 1,6</strong> 30.08.2026 Adana 7. Koşu — Handikap 17 /H2 / SENTETIK / 2000m / Birincilik ikramiyesi: 680.000 TL</td><td class="fig-cell"><span class="fig">88</span></td></tr>
+<tr><td>KING FERİT</td><td>3 oldu</td><td><strong class="black-hit">7 oldu</strong> <strong class="black-hit">Sabit Ganyan: 14</strong> 28.08.2026 Bursa 8. Koşu — KV-6 / CIM / 1200m / Birincilik ikramiyesi: 695.000 TL</td><td class="fig-cell"><span class="fig">55</span></td></tr>
+<tr><td>MIZMIZ MYRTLE</td><td>5 oldu</td><td><strong class="black-hit">10 oldu</strong> <strong class="black-hit">Sabit Ganyan: 60</strong> 26.09.2026 Ankara 9. Koşu — ŞARTLI 4 / CIM / 1200m / Birincilik ikramiyesi: 595.000 TL</td><td class="fig-cell"><span class="fig">70</span></td></tr>
+<tr><td>ERULİNA</td><td>7 oldu</td><td><strong class="black-hit">8 oldu</strong> <strong class="black-hit">Sabit Ganyan: 25</strong> 23.08.2026 Istanbul 9. Koşu — Handikap 15 /H1/Y1 / SENTETIK / 1500m / Birincilik ikramiyesi: 595.000 TL</td><td class="fig-cell"><span class="fig">62</span></td></tr>
+<tr><td>HEAVEN LIGHT</td><td>8 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 4,5</strong> 25.08.2026 Kocaeli 8. Koşu — Handikap 14/Dişi /H2 / KUM / 1400m / Birincilik ikramiyesi: 400.000 TL</td><td class="fig-cell"><span class="fig">67</span></td></tr>
 </tbody>
 </table>
 <div class="gap"></div>
@@ -217,17 +227,17 @@ strong { font-weight: 700; }
 <p>İkramiye karşılaştırması: Referans birincilik 630.000 TL / Bugünkü birincilik 595.000 TL</p>
 <p>Sınıf durumu: sınıf düşüyor</p>
 <table>
-<thead><tr><th>At</th><th>Ref. sıra</th><th>Dereceler</th></tr></thead>
+<thead><tr><th>At</th><th>Ref. sıra</th><th>Dereceler</th><th>Hız</th></tr></thead>
 <tbody>
-<tr><td>SİHİRLİ JOVANKA</td><td>1 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 6</strong> 04.08.2026 Kocaeli 6. Koşu — Handikap 15/Dişi /H2 / KUM / 2000m / Birincilik ikramiyesi: 490.000 TL</td></tr>
-<tr><td>MY REBELLIOUS GIRL</td><td>2 oldu</td><td><strong class="black-hit">3 oldu</strong> <strong class="black-hit">Sabit Ganyan: 4</strong> 04.08.2026 Kocaeli 2. Koşu — Handikap 15 /H2 / KUM / 1500m / Birincilik ikramiyesi: 490.000 TL</td></tr>
-<tr><td>ONE PAGE</td><td>3 oldu</td><td><strong class="black-hit">5 oldu</strong> <strong class="black-hit">Sabit Ganyan: 20</strong> 11.08.2026 Kocaeli 4. Koşu — ŞARTLI 5/Dişi / KUM / 1500m / Birincilik ikramiyesi: 630.000 TL</td></tr>
-<tr><td>HEAVEN LIGHT</td><td>4 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 3,4</strong> 30.07.2026 Kocaeli 2. Koşu — Maiden / KUM / 1400m / Birincilik ikramiyesi: 545.000 TL</td></tr>
-<tr><td>DAELLA</td><td>5 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 9</strong> 05.08.2026 Istanbul 6. Koşu — KV-6/Dişi / SENTETIK / 1500m / Birincilik ikramiyesi: 835.000 TL</td></tr>
-<tr><td>TEK NERGİZ</td><td>6 oldu</td><td><strong class="black-hit">9 oldu</strong> <strong class="black-hit">Sabit Ganyan: 80</strong> 04.08.2026 Ankara 8. Koşu — Handikap 15/Dişi /H1 / KUM / 1200m / Birincilik ikramiyesi: 595.000 TL</td></tr>
-<tr><td>GOLDEN SCORE</td><td>7 oldu</td><td><strong class="black-hit">10 oldu</strong> <strong class="black-hit">Sabit Ganyan: 9</strong> 10.09.2026 Izmir 1. Koşu — Handikap 15 /H2 / KUM / 1400m / Birincilik ikramiyesi: 490.000 TL</td></tr>
-<tr><td>SHADOW OF THENIGHT</td><td>10 oldu</td><td><strong class="black-hit">15 oldu</strong> <strong class="black-hit">Sabit Ganyan: 80</strong> 21.09.2026 Bursa 8. Koşu — Handikap 15/Dişi /H2 / CIM / 1500m / Birincilik ikramiyesi: 490.000 TL</td></tr>
-<tr><td>FATMA ZERYAM</td><td>11 oldu</td><td><strong class="black-hit">5 oldu</strong> <strong class="black-hit">Sabit Ganyan: 14</strong> 01.10.2026 Ankara 4. Koşu — Handikap 17/Dişi /H1 / KUM / 1300m / Birincilik ikramiyesi: 795.000 TL</td></tr>
+<tr><td>SİHİRLİ JOVANKA</td><td>1 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 6</strong> 04.08.2026 Kocaeli 6. Koşu — Handikap 15/Dişi /H2 / KUM / 2000m / Birincilik ikramiyesi: 490.000 TL</td><td class="fig-cell"><span class="fig">69</span></td></tr>
+<tr><td>MY REBELLIOUS GIRL</td><td>2 oldu</td><td><strong class="black-hit">3 oldu</strong> <strong class="black-hit">Sabit Ganyan: 4</strong> 04.08.2026 Kocaeli 2. Koşu — Handikap 15 /H2 / KUM / 1500m / Birincilik ikramiyesi: 490.000 TL</td><td class="fig-cell"><span class="fig">70</span></td></tr>
+<tr><td>ONE PAGE</td><td>3 oldu</td><td><strong class="black-hit">5 oldu</strong> <strong class="black-hit">Sabit Ganyan: 20</strong> 11.08.2026 Kocaeli 4. Koşu — ŞARTLI 5/Dişi / KUM / 1500m / Birincilik ikramiyesi: 630.000 TL</td><td class="fig-cell"><span class="fig">66</span></td></tr>
+<tr><td>HEAVEN LIGHT</td><td>4 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 3,4</strong> 30.07.2026 Kocaeli 2. Koşu — Maiden / KUM / 1400m / Birincilik ikramiyesi: 545.000 TL</td><td class="fig-cell"><span class="fig">72</span></td></tr>
+<tr><td>DAELLA</td><td>5 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 9</strong> 05.08.2026 Istanbul 6. Koşu — KV-6/Dişi / SENTETIK / 1500m / Birincilik ikramiyesi: 835.000 TL</td><td class="fig-cell"><span class="fig">72</span></td></tr>
+<tr><td>TEK NERGİZ</td><td>6 oldu</td><td><strong class="black-hit">9 oldu</strong> <strong class="black-hit">Sabit Ganyan: 80</strong> 04.08.2026 Ankara 8. Koşu — Handikap 15/Dişi /H1 / KUM / 1200m / Birincilik ikramiyesi: 595.000 TL</td><td class="fig-cell"><span class="fig">71</span></td></tr>
+<tr><td>GOLDEN SCORE</td><td>7 oldu</td><td><strong class="black-hit">10 oldu</strong> <strong class="black-hit">Sabit Ganyan: 9</strong> 10.09.2026 Izmir 1. Koşu — Handikap 15 /H2 / KUM / 1400m / Birincilik ikramiyesi: 490.000 TL</td><td class="fig-cell"><span class="fig">40</span></td></tr>
+<tr><td>SHADOW OF THENIGHT</td><td>10 oldu</td><td><strong class="black-hit">15 oldu</strong> <strong class="black-hit">Sabit Ganyan: 80</strong> 21.09.2026 Bursa 8. Koşu — Handikap 15/Dişi /H2 / CIM / 1500m / Birincilik ikramiyesi: 490.000 TL</td><td class="fig-cell"><span class="fig">26</span></td></tr>
+<tr><td>FATMA ZERYAM</td><td>11 oldu</td><td><strong class="black-hit">5 oldu</strong> <strong class="black-hit">Sabit Ganyan: 14</strong> 01.10.2026 Ankara 4. Koşu — Handikap 17/Dişi /H1 / KUM / 1300m / Birincilik ikramiyesi: 795.000 TL</td><td class="fig-cell"><span class="fig">80</span></td></tr>
 </tbody>
 </table>
 <div class="gap"></div>
@@ -250,12 +260,12 @@ strong { font-weight: 700; }
 <p>İkramiye karşılaştırması: Referans birincilik 470.000 TL / Bugünkü birincilik 975.000 TL</p>
 <p>Sınıf durumu: sınıf yükseliyor</p>
 <table>
-<thead><tr><th>At</th><th>Ref. sıra</th><th>Dereceler</th></tr></thead>
+<thead><tr><th>At</th><th>Ref. sıra</th><th>Dereceler</th><th>Hız</th></tr></thead>
 <tbody>
-<tr><td>ROSE WARRIOR</td><td>2 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 2,1</strong> 20.09.2026 Adana 4. Koşu — ŞARTLI 4 / SENTETIK / 1400m / Birincilik ikramiyesi: 490.000 TL</td></tr>
-<tr><td>RADAGIA</td><td>3 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 1,35</strong> 19.09.2026 Ankara 3. Koşu — SATIŞ 3 / CIM / 1300m / Birincilik ikramiyesi: 630.000 TL</td></tr>
-<tr><td>DESIGNER</td><td>4 oldu</td><td><strong class="black-hit">3 oldu</strong> <strong class="black-hit">Sabit Ganyan: 18</strong> 12.09.2026 Ankara 7. Koşu — KV-8/Dişi / KUM / 1400m / Birincilik ikramiyesi: 1.130.000 TL</td></tr>
-<tr><td>CAPRENO</td><td>5 oldu</td><td><strong class="black-hit">2 oldu</strong> <strong class="black-hit">Sabit Ganyan: 8,5</strong> 19.09.2026 Ankara 3. Koşu — SATIŞ 3 / CIM / 1300m / Birincilik ikramiyesi: 630.000 TL</td></tr>
+<tr><td>ROSE WARRIOR</td><td>2 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 2,1</strong> 20.09.2026 Adana 4. Koşu — ŞARTLI 4 / SENTETIK / 1400m / Birincilik ikramiyesi: 490.000 TL</td><td class="fig-cell"><span class="fig">91</span></td></tr>
+<tr><td>RADAGIA</td><td>3 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 1,35</strong> 19.09.2026 Ankara 3. Koşu — SATIŞ 3 / CIM / 1300m / Birincilik ikramiyesi: 630.000 TL</td><td class="fig-cell"><span class="fig">86</span></td></tr>
+<tr><td>DESIGNER</td><td>4 oldu</td><td><strong class="black-hit">3 oldu</strong> <strong class="black-hit">Sabit Ganyan: 18</strong> 12.09.2026 Ankara 7. Koşu — KV-8/Dişi / KUM / 1400m / Birincilik ikramiyesi: 1.130.000 TL</td><td class="fig-cell"><span class="fig">71</span></td></tr>
+<tr><td>CAPRENO</td><td>5 oldu</td><td><strong class="black-hit">2 oldu</strong> <strong class="black-hit">Sabit Ganyan: 8,5</strong> 19.09.2026 Ankara 3. Koşu — SATIŞ 3 / CIM / 1300m / Birincilik ikramiyesi: 630.000 TL</td><td class="fig-cell"><span class="fig">82</span></td></tr>
 </tbody>
 </table>
 <div class="gap"></div>
@@ -278,12 +288,12 @@ strong { font-weight: 700; }
 <p>İkramiye karşılaştırması: Referans birincilik 975.000 TL / Bugünkü birincilik 795.000 TL</p>
 <p>Sınıf durumu: sınıf düşüyor</p>
 <table>
-<thead><tr><th>At</th><th>Ref. sıra</th><th>Dereceler</th></tr></thead>
+<thead><tr><th>At</th><th>Ref. sıra</th><th>Dereceler</th><th>Hız</th></tr></thead>
 <tbody>
-<tr><td>DARK VEYRON</td><td>2 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 3,4</strong> 01.10.2026 Kocaeli 9. Koşu — Handikap 21 /H2 / KUM / 1400m / Birincilik ikramiyesi: 695.000 TL</td></tr>
-<tr><td>GHOST COMMANDER</td><td>3 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 8,5</strong> 30.09.2026 Istanbul 3. Koşu — SATIŞ 4 / SENTETIK / 2100m / Birincilik ikramiyesi: 730.000 TL</td></tr>
-<tr><td>OĞLUM GALİBEY</td><td>5 oldu</td><td><strong class="black-hit">4 oldu</strong> <strong class="black-hit">Sabit Ganyan: 8,5</strong> 19.09.2026 Ankara 7. Koşu — Handikap 21 /H1 / CIM / 1600m / Birincilik ikramiyesi: 835.000 TL</td></tr>
-<tr><td>CRAZY DILDAR</td><td>6 oldu</td><td><strong class="black-hit">7 oldu</strong> <strong class="black-hit">Sabit Ganyan: 18</strong> 26.09.2026 Ankara 9. Koşu — ŞARTLI 4 / CIM / 1200m / Birincilik ikramiyesi: 595.000 TL</td></tr>
+<tr><td>DARK VEYRON</td><td>2 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 3,4</strong> 01.10.2026 Kocaeli 9. Koşu — Handikap 21 /H2 / KUM / 1400m / Birincilik ikramiyesi: 695.000 TL</td><td class="fig-cell"><span class="fig">89</span></td></tr>
+<tr><td>GHOST COMMANDER</td><td>3 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 8,5</strong> 30.09.2026 Istanbul 3. Koşu — SATIŞ 4 / SENTETIK / 2100m / Birincilik ikramiyesi: 730.000 TL</td><td class="fig-cell"><span class="fig">87</span></td></tr>
+<tr><td>OĞLUM GALİBEY</td><td>5 oldu</td><td><strong class="black-hit">4 oldu</strong> <strong class="black-hit">Sabit Ganyan: 8,5</strong> 19.09.2026 Ankara 7. Koşu — Handikap 21 /H1 / CIM / 1600m / Birincilik ikramiyesi: 835.000 TL</td><td class="fig-cell"><span class="fig">84</span></td></tr>
+<tr><td>CRAZY DILDAR</td><td>6 oldu</td><td><strong class="black-hit">7 oldu</strong> <strong class="black-hit">Sabit Ganyan: 18</strong> 26.09.2026 Ankara 9. Koşu — ŞARTLI 4 / CIM / 1200m / Birincilik ikramiyesi: 595.000 TL</td><td class="fig-cell"><span class="fig">76</span></td></tr>
 </tbody>
 </table>
 <div class="gap"></div>
@@ -306,14 +316,14 @@ strong { font-weight: 700; }
 <p>İkramiye karşılaştırması: Referans birincilik 595.000 TL / Bugünkü birincilik 730.000 TL</p>
 <p>Sınıf durumu: sınıf yükseliyor</p>
 <table>
-<thead><tr><th>At</th><th>Ref. sıra</th><th>Dereceler</th></tr></thead>
+<thead><tr><th>At</th><th>Ref. sıra</th><th>Dereceler</th><th>Hız</th></tr></thead>
 <tbody>
-<tr><td>DİSTİLE</td><td>1 oldu</td><td><strong class="black-hit">3 oldu</strong> <strong class="black-hit">Sabit Ganyan: 4,75</strong> 22.09.2026 Ankara 8. Koşu — Handikap 16/DHÖW/Dişi /H1 / KUM / 1500m / Birincilik ikramiyesi: 730.000 TL</td></tr>
-<tr><td>SERDENİZ</td><td>2 oldu</td><td><strong class="black-hit">3 oldu</strong> <strong class="black-hit">Sabit Ganyan: 2,6</strong> 24.09.2026 Ankara 4. Koşu — Handikap 16/DHÖW /H1 / CIM / 2200m / Birincilik ikramiyesi: 730.000 TL</td></tr>
-<tr><td>DİLMAKIZ</td><td>3 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 3,2</strong> 23.09.2026 Istanbul 2. Koşu — Handikap 15/DHÖW/Dişi /H1 / SENTETIK / 1400m / Birincilik ikramiyesi: 595.000 TL</td></tr>
-<tr><td>MENDERES KIZI</td><td>4 oldu</td><td><strong class="black-hit">4 oldu</strong> <strong class="black-hit">Sabit Ganyan: 5</strong> 23.09.2026 Istanbul 2. Koşu — Handikap 15/DHÖW/Dişi /H1 / SENTETIK / 1400m / Birincilik ikramiyesi: 595.000 TL</td></tr>
-<tr><td>PERVARİ</td><td>6 oldu</td><td><strong class="black-hit">8 oldu</strong> <strong class="black-hit">Sabit Ganyan: 8</strong> 24.09.2026 Ankara 4. Koşu — Handikap 16/DHÖW /H1 / CIM / 2200m / Birincilik ikramiyesi: 730.000 TL</td></tr>
-<tr><td>KATICESUR</td><td>7 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 3,6</strong> 24.09.2026 Ankara 4. Koşu — Handikap 16/DHÖW /H1 / CIM / 2200m / Birincilik ikramiyesi: 730.000 TL</td></tr>
+<tr><td>DİSTİLE</td><td>1 oldu</td><td><strong class="black-hit">3 oldu</strong> <strong class="black-hit">Sabit Ganyan: 4,75</strong> 22.09.2026 Ankara 8. Koşu — Handikap 16/DHÖW/Dişi /H1 / KUM / 1500m / Birincilik ikramiyesi: 730.000 TL</td><td class="fig-cell"><span class="fig">75</span></td></tr>
+<tr><td>SERDENİZ</td><td>2 oldu</td><td><strong class="black-hit">3 oldu</strong> <strong class="black-hit">Sabit Ganyan: 2,6</strong> 24.09.2026 Ankara 4. Koşu — Handikap 16/DHÖW /H1 / CIM / 2200m / Birincilik ikramiyesi: 730.000 TL</td><td class="fig-cell"><span class="fig">73</span></td></tr>
+<tr><td>DİLMAKIZ</td><td>3 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 3,2</strong> 23.09.2026 Istanbul 2. Koşu — Handikap 15/DHÖW/Dişi /H1 / SENTETIK / 1400m / Birincilik ikramiyesi: 595.000 TL</td><td class="fig-cell"><span class="fig">79</span></td></tr>
+<tr><td>MENDERES KIZI</td><td>4 oldu</td><td><strong class="black-hit">4 oldu</strong> <strong class="black-hit">Sabit Ganyan: 5</strong> 23.09.2026 Istanbul 2. Koşu — Handikap 15/DHÖW/Dişi /H1 / SENTETIK / 1400m / Birincilik ikramiyesi: 595.000 TL</td><td class="fig-cell"><span class="fig">74</span></td></tr>
+<tr><td>PERVARİ</td><td>6 oldu</td><td><strong class="black-hit">8 oldu</strong> <strong class="black-hit">Sabit Ganyan: 8</strong> 24.09.2026 Ankara 4. Koşu — Handikap 16/DHÖW /H1 / CIM / 2200m / Birincilik ikramiyesi: 730.000 TL</td><td class="fig-cell"><span class="fig">34</span></td></tr>
+<tr><td>KATICESUR</td><td>7 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 3,6</strong> 24.09.2026 Ankara 4. Koşu — Handikap 16/DHÖW /H1 / CIM / 2200m / Birincilik ikramiyesi: 730.000 TL</td><td class="fig-cell"><span class="fig">76</span></td></tr>
 </tbody>
 </table>
 <div class="gap"></div>
@@ -329,14 +339,14 @@ strong { font-weight: 700; }
 <p>İkramiye karşılaştırması: Referans birincilik 595.000 TL / Bugünkü birincilik 730.000 TL</p>
 <p>Sınıf durumu: sınıf yükseliyor</p>
 <table>
-<thead><tr><th>At</th><th>Ref. sıra</th><th>Dereceler</th></tr></thead>
+<thead><tr><th>At</th><th>Ref. sıra</th><th>Dereceler</th><th>Hız</th></tr></thead>
 <tbody>
-<tr><td>DİSTİLE</td><td>1 oldu</td><td><strong class="black-hit">3 oldu</strong> <strong class="black-hit">Sabit Ganyan: 4,75</strong> 22.09.2026 Ankara 8. Koşu — Handikap 16/DHÖW/Dişi /H1 / KUM / 1500m / Birincilik ikramiyesi: 730.000 TL</td></tr>
-<tr><td>SERDENİZ</td><td>2 oldu</td><td><strong class="black-hit">3 oldu</strong> <strong class="black-hit">Sabit Ganyan: 2,6</strong> 24.09.2026 Ankara 4. Koşu — Handikap 16/DHÖW /H1 / CIM / 2200m / Birincilik ikramiyesi: 730.000 TL</td></tr>
-<tr><td>DİLMAKIZ</td><td>3 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 3,2</strong> 23.09.2026 Istanbul 2. Koşu — Handikap 15/DHÖW/Dişi /H1 / SENTETIK / 1400m / Birincilik ikramiyesi: 595.000 TL</td></tr>
-<tr><td>MENDERES KIZI</td><td>4 oldu</td><td><strong class="black-hit">4 oldu</strong> <strong class="black-hit">Sabit Ganyan: 5</strong> 23.09.2026 Istanbul 2. Koşu — Handikap 15/DHÖW/Dişi /H1 / SENTETIK / 1400m / Birincilik ikramiyesi: 595.000 TL</td></tr>
-<tr><td>PERVARİ</td><td>6 oldu</td><td><strong class="black-hit">8 oldu</strong> <strong class="black-hit">Sabit Ganyan: 8</strong> 24.09.2026 Ankara 4. Koşu — Handikap 16/DHÖW /H1 / CIM / 2200m / Birincilik ikramiyesi: 730.000 TL</td></tr>
-<tr><td>KATICESUR</td><td>7 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 3,6</strong> 24.09.2026 Ankara 4. Koşu — Handikap 16/DHÖW /H1 / CIM / 2200m / Birincilik ikramiyesi: 730.000 TL</td></tr>
+<tr><td>DİSTİLE</td><td>1 oldu</td><td><strong class="black-hit">3 oldu</strong> <strong class="black-hit">Sabit Ganyan: 4,75</strong> 22.09.2026 Ankara 8. Koşu — Handikap 16/DHÖW/Dişi /H1 / KUM / 1500m / Birincilik ikramiyesi: 730.000 TL</td><td class="fig-cell"><span class="fig">75</span></td></tr>
+<tr><td>SERDENİZ</td><td>2 oldu</td><td><strong class="black-hit">3 oldu</strong> <strong class="black-hit">Sabit Ganyan: 2,6</strong> 24.09.2026 Ankara 4. Koşu — Handikap 16/DHÖW /H1 / CIM / 2200m / Birincilik ikramiyesi: 730.000 TL</td><td class="fig-cell"><span class="fig">73</span></td></tr>
+<tr><td>DİLMAKIZ</td><td>3 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 3,2</strong> 23.09.2026 Istanbul 2. Koşu — Handikap 15/DHÖW/Dişi /H1 / SENTETIK / 1400m / Birincilik ikramiyesi: 595.000 TL</td><td class="fig-cell"><span class="fig">79</span></td></tr>
+<tr><td>MENDERES KIZI</td><td>4 oldu</td><td><strong class="black-hit">4 oldu</strong> <strong class="black-hit">Sabit Ganyan: 5</strong> 23.09.2026 Istanbul 2. Koşu — Handikap 15/DHÖW/Dişi /H1 / SENTETIK / 1400m / Birincilik ikramiyesi: 595.000 TL</td><td class="fig-cell"><span class="fig">74</span></td></tr>
+<tr><td>PERVARİ</td><td>6 oldu</td><td><strong class="black-hit">8 oldu</strong> <strong class="black-hit">Sabit Ganyan: 8</strong> 24.09.2026 Ankara 4. Koşu — Handikap 16/DHÖW /H1 / CIM / 2200m / Birincilik ikramiyesi: 730.000 TL</td><td class="fig-cell"><span class="fig">34</span></td></tr>
+<tr><td>KATICESUR</td><td>7 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 3,6</strong> 24.09.2026 Ankara 4. Koşu — Handikap 16/DHÖW /H1 / CIM / 2200m / Birincilik ikramiyesi: 730.000 TL</td><td class="fig-cell"><span class="fig">76</span></td></tr>
 </tbody>
 </table>
 <div class="gap"></div>
@@ -352,14 +362,14 @@ strong { font-weight: 700; }
 <p>İkramiye karşılaştırması: Referans birincilik 595.000 TL / Bugünkü birincilik 730.000 TL</p>
 <p>Sınıf durumu: sınıf yükseliyor</p>
 <table>
-<thead><tr><th>At</th><th>Ref. sıra</th><th>Dereceler</th></tr></thead>
+<thead><tr><th>At</th><th>Ref. sıra</th><th>Dereceler</th><th>Hız</th></tr></thead>
 <tbody>
-<tr><td>DİSTİLE</td><td>1 oldu</td><td><strong class="black-hit">3 oldu</strong> <strong class="black-hit">Sabit Ganyan: 4,75</strong> 22.09.2026 Ankara 8. Koşu — Handikap 16/DHÖW/Dişi /H1 / KUM / 1500m / Birincilik ikramiyesi: 730.000 TL</td></tr>
-<tr><td>SERDENİZ</td><td>2 oldu</td><td><strong class="black-hit">3 oldu</strong> <strong class="black-hit">Sabit Ganyan: 2,6</strong> 24.09.2026 Ankara 4. Koşu — Handikap 16/DHÖW /H1 / CIM / 2200m / Birincilik ikramiyesi: 730.000 TL</td></tr>
-<tr><td>DİLMAKIZ</td><td>3 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 3,2</strong> 23.09.2026 Istanbul 2. Koşu — Handikap 15/DHÖW/Dişi /H1 / SENTETIK / 1400m / Birincilik ikramiyesi: 595.000 TL</td></tr>
-<tr><td>MENDERES KIZI</td><td>4 oldu</td><td><strong class="black-hit">4 oldu</strong> <strong class="black-hit">Sabit Ganyan: 5</strong> 23.09.2026 Istanbul 2. Koşu — Handikap 15/DHÖW/Dişi /H1 / SENTETIK / 1400m / Birincilik ikramiyesi: 595.000 TL</td></tr>
-<tr><td>PERVARİ</td><td>6 oldu</td><td><strong class="black-hit">8 oldu</strong> <strong class="black-hit">Sabit Ganyan: 8</strong> 24.09.2026 Ankara 4. Koşu — Handikap 16/DHÖW /H1 / CIM / 2200m / Birincilik ikramiyesi: 730.000 TL</td></tr>
-<tr><td>KATICESUR</td><td>7 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 3,6</strong> 24.09.2026 Ankara 4. Koşu — Handikap 16/DHÖW /H1 / CIM / 2200m / Birincilik ikramiyesi: 730.000 TL</td></tr>
+<tr><td>DİSTİLE</td><td>1 oldu</td><td><strong class="black-hit">3 oldu</strong> <strong class="black-hit">Sabit Ganyan: 4,75</strong> 22.09.2026 Ankara 8. Koşu — Handikap 16/DHÖW/Dişi /H1 / KUM / 1500m / Birincilik ikramiyesi: 730.000 TL</td><td class="fig-cell"><span class="fig">75</span></td></tr>
+<tr><td>SERDENİZ</td><td>2 oldu</td><td><strong class="black-hit">3 oldu</strong> <strong class="black-hit">Sabit Ganyan: 2,6</strong> 24.09.2026 Ankara 4. Koşu — Handikap 16/DHÖW /H1 / CIM / 2200m / Birincilik ikramiyesi: 730.000 TL</td><td class="fig-cell"><span class="fig">73</span></td></tr>
+<tr><td>DİLMAKIZ</td><td>3 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 3,2</strong> 23.09.2026 Istanbul 2. Koşu — Handikap 15/DHÖW/Dişi /H1 / SENTETIK / 1400m / Birincilik ikramiyesi: 595.000 TL</td><td class="fig-cell"><span class="fig">79</span></td></tr>
+<tr><td>MENDERES KIZI</td><td>4 oldu</td><td><strong class="black-hit">4 oldu</strong> <strong class="black-hit">Sabit Ganyan: 5</strong> 23.09.2026 Istanbul 2. Koşu — Handikap 15/DHÖW/Dişi /H1 / SENTETIK / 1400m / Birincilik ikramiyesi: 595.000 TL</td><td class="fig-cell"><span class="fig">74</span></td></tr>
+<tr><td>PERVARİ</td><td>6 oldu</td><td><strong class="black-hit">8 oldu</strong> <strong class="black-hit">Sabit Ganyan: 8</strong> 24.09.2026 Ankara 4. Koşu — Handikap 16/DHÖW /H1 / CIM / 2200m / Birincilik ikramiyesi: 730.000 TL</td><td class="fig-cell"><span class="fig">34</span></td></tr>
+<tr><td>KATICESUR</td><td>7 oldu</td><td><strong class="black-hit">1 oldu</strong> <strong class="black-hit">Sabit Ganyan: 3,6</strong> 24.09.2026 Ankara 4. Koşu — Handikap 16/DHÖW /H1 / CIM / 2200m / Birincilik ikramiyesi: 730.000 TL</td><td class="fig-cell"><span class="fig">76</span></td></tr>
 </tbody>
 </table>
 <div class="gap"></div>
