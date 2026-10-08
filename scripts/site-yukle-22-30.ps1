@@ -61,7 +61,8 @@ $SrcKilit  = 'C:\Users\Monster\OneDrive\Desktop\kilit yarış arşivi'
 $SrcBeyer  = 'C:\Users\Monster\OneDrive\Desktop\beyer raporu'
 $SrcIstat  = 'C:\Users\Monster\OneDrive\Desktop\istatistik ve galop'
 if (-not (Test-Path $SrcIstat)) { $SrcIstat = 'C:\Users\Monster\OneDrive\Desktop\istatistik' }
-$SrcSinif  = 'C:\Users\Monster\OneDrive\Desktop\gidişhat analizi'
+$SrcSinif  = 'C:\Users\Monster\OneDrive\Desktop\sınıf düşme analizi'
+$SrcSinifEski = 'C:\Users\Monster\OneDrive\Desktop\gidişhat analizi'
 $SrcTempo  = 'C:\Users\Monster\OneDrive\Desktop\frontrunner'
 $SrcDeger  = 'C:\Users\Monster\OneDrive\Desktop\günlük sonuç değerlendirme raporu'
 
@@ -143,6 +144,12 @@ if (Test-Path $SrcBeyer) {
     }
     if (Test-Path $SrcSinif) {
         foreach ($f in Get-ChildItem $SrcSinif -Filter '*.html') {
+            $m = [regex]::Match($f.Name, '^(\d{4}-\d{2}-\d{2})_(.+)_sinif_dusme_analizi\.html$')
+            if ($m.Success) { $tarihler.Add($m.Groups[1].Value.Replace('-','')); $sehirTarih.Add($m.Groups[1].Value.Replace('-','') + '|' + (ToAsciiLower $m.Groups[2].Value)) | Out-Null }
+        }
+    }
+    if (Test-Path $SrcSinifEski) {
+        foreach ($f in Get-ChildItem $SrcSinifEski -Filter '*.html') {
             $m = [regex]::Match($f.Name, '^(\d{4}-\d{2}-\d{2})_(.+)_sinif_dusme_analizi\.html$')
             if ($m.Success) { $tarihler.Add($m.Groups[1].Value.Replace('-','')); $sehirTarih.Add($m.Groups[1].Value.Replace('-','') + '|' + (ToAsciiLower $m.Groups[2].Value)) | Out-Null }
         }
@@ -246,6 +253,7 @@ foreach ($sehir in $sira) {
         }
     }
     $sinif = Get-ChildItem $SrcSinif -Filter "${HedefIso}_${sehir}_sinif_dusme_analizi.html" -ErrorAction SilentlyContinue | Select-Object -First 1
+    if (-not $sinif -and (Test-Path $SrcSinifEski)) { $sinif = Get-ChildItem $SrcSinifEski -Filter "${HedefIso}_${sehir}_sinif_dusme_analizi.html" -ErrorAction SilentlyContinue | Select-Object -First 1 }
     $tempo = Get-ChildItem $SrcTempo -Filter '*.html' -ErrorAction SilentlyContinue | Where-Object { $_.Name -match "^${HedefIso}_onde_giden_.*" -and $_.Name -match ("_" + [regex]::Escape($sehir) + "(_|\.)") } | Select-Object -First 1
 
     if ($beyer) {
